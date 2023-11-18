@@ -1,0 +1,59 @@
+@import "../../../assets/styles/variables.scss";
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  .menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    li {
+      list-style-type: none;
+    }
+
+    .menuItem a {
+      margin-left: 50px;
+      list-style-type: none;
+      font-weight: 600;
+      font-size: 21px;
+      line-height: 26px;
+      text-transform: uppercase;
+      color: #000;
+      padding: 0;
+      position: relative;
+      font-family: "Montserrat";
+      text-decoration: none;
+      &:hover::after {
+        opacity: 1;
+        -webkit-transform: translateX(-25px);
+        transform: translateX(-25px);
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        width: 4px;
+        height: 4px;
+        bottom: 50%;
+        right: -40px;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background-color: #ff3928;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    a.activeMenu[href="/"],
+    a.activeMenu[href="/projects"],
+    a.activeMenu[href="/contact-us"] {
+      color: #ff3928 !important;
+      &::after {
+        opacity: 1 !important;
+        -webkit-transform: translateX(-25px) !important;
+        transform: translateX(-25px) !important;
+      }
+    }
+  }
+}

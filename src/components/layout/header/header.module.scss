@@ -1,0 +1,12 @@
+.header {
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

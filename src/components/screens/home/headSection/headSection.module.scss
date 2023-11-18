@@ -1,0 +1,116 @@
+@import '@/assets/styles/variables.scss';
+
+.headSection {
+  padding: 20px 0 100px;
+  height: 100vh;
+  min-height: 900px;
+  .title {
+    display: block;
+    max-width: 1100px;
+    font-weight: 700;
+    color: $mainTextColor;
+    font-size: 60px;
+    line-height: 70px;
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+  .subTitle {
+    font-weight: 800;
+    font-size: 300px;
+    line-height: 1;
+    color: $mainTextColor;
+    text-shadow: #c8cad6 4px 4px 4px, #fdfdff -4px -4px 4px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+  }
+  .wrapper {
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 20px;
+    position: relative;
+
+    .benefitsItem {
+      padding: 0 20px;
+
+      .benefitsTitle {
+        display: block;
+        margin-bottom: 40px;
+        font-size: 27px;
+        line-height: 30px;
+        font-weight: 700;
+        color: $mainTextColor;
+      }
+
+      .benefitsSubtitle {
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 60px;
+        letter-spacing: -0.015em;
+        color: $mainTextColor;
+        span {
+          font-size: 40px;
+          margin-left: 20px;
+        }
+      }
+
+      .benefitsDescr {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        color: $activeTextColor;
+        line-height: 30px;
+      }
+    }
+  }
+  #scroll {
+    position: absolute;
+    z-index: 7;
+    right: 0;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    .scroll {
+      border-left: 2px solid $mainTextColor;
+      height: 50px;
+      position: absolute;
+      left: 50%;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin-left: -5px;
+        margin-bottom: 17px;
+        border: 1.5px solid #ffdad6;
+        border-radius: 7.5px;
+        background-color: $activeTextColor;
+        -webkit-animation: action 1s infinite alternate;
+        animation: action 1s infinite alternate;
+      }
+    }
+  }
+}
+
+@keyframes action {
+    0% {
+      -webkit-transform: scale(1) translateY(-3px);
+              transform: scale(1) translateY(-3px);
+    }
+    100% {
+      -webkit-transform: scale(2) translateY(23px);
+              transform: scale(2) translateY(23px);
+    }
+  }
+  
