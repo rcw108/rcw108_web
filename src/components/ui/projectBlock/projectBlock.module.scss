@@ -20,7 +20,10 @@
   .img {
     position: relative;
     height: 455px;
+    width: 100%;
     img {
+      height: 455px;
+      width: 100%;
       // max-height: 455px;
       -o-object-fit: cover;
       object-fit: cover;

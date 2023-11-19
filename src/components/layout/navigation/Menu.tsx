@@ -55,7 +55,6 @@ const Menu: FC<PropsWithChildren<any>> = ({menu}) => {
                   pathName = item.url;
                 }
 
-                console.log(pathname, pathName)
 
                 return (
                   <li key={index} className={`${styles.menuItem}`}>

@@ -34,6 +34,10 @@ export interface HomeData {
     title_s: string;
     text_s: string;
     react_wordpress_img: string;
+    react_wordpress_img_second: string;
+    react_wordpress_img_third: string;
+    react_wordpress_btn_tx: string;
+    react_wordpress_btn_link: string;
     services: IService[];
     title_p: string;
     description_pro: string;

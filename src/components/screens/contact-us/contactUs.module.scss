@@ -1,0 +1,80 @@
+@import "@/assets/styles/variables.scss";
+
+.contact {
+  padding-top: 100px;
+  .title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 50px;
+    line-height: 1.3em;
+    font-weight: 700;
+    color: $mainTextColor;
+  }
+  .subTitle {
+    text-align: center;
+    font-size: 27px;
+    line-height: 30px;
+    font-weight: 700;
+    color: $mainTextColor;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .wrapper {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding-top: 45px;
+    .contacts {
+      position: absolute;
+      content: "";
+      top: 45px;
+      left: 5px;
+      h4 {
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 26px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      a {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 10px;
+        color: #000;
+        display: inline-block;
+        padding-right: 15px;
+        position: relative;
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        text-decoration: none;
+        &::after {
+          position: absolute;
+          content: "";
+          width: 5px;
+          height: 5px;
+          top: 4px;
+          right: 0;
+          border-radius: 50%;
+          background-color: #000;
+          overflow: hidden;
+          -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+        }
+        &:hover {
+          -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+          -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+          &::after {
+            opacity: 0;
+            -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+            -webkit-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

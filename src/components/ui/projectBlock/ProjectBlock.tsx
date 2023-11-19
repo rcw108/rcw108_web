@@ -35,7 +35,7 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
             src={image}
             alt={title}
             height={"455"}
-            width={"660"}
+            width={430}
             loading="eager"
           />
         </div>

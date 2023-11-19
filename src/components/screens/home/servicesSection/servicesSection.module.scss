@@ -36,9 +36,32 @@
     margin: 0 auto;
   }
   .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
   }
-  .img img {
-    width: 50%;
+  .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn {
+      a {
+        color: $activeTextColor;
+        text-align: center;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        text-decoration: none;
+        width: 250px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        border: 2px solid $activeTextColor;
+        cursor: pointer;
+      }
+    }
   }
 }
