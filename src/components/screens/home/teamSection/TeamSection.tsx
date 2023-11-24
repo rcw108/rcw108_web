@@ -1,27 +1,100 @@
-import { FC, PropsWithChildren } from 'react'
+'use client';
 
-import Image from 'next/image';
-
-import styles from './teamSection.module.scss';
-import { TeamMember } from '@/interfaces/home.interface';
+import { FC, PropsWithChildren, useRef, useEffect } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import styles from "./teamSection.module.scss";
+import { TeamMember } from "@/interfaces/home.interface";
+import Slider from "react-slick";
+import TeamBlock from "./TeamBlock";
 
 interface ITeamSection {
-    team: TeamMember[];
-    title: string;
-    teamBtn: string
+  team: TeamMember[];
+  title: string;
+  teamBtn: string;
 }
 
-const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({ team, title, teamBtn }) => {
-    return (
-        <section className={styles.team} id='team'>
-          <h2 className={styles.title}>{title}</h2>
-          <div className={styles.wrapper}>
-            {team ? team.map((item, index) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
+  team,
+  title,
+  teamBtn,
+}) => {
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    autoplay: false,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  const teamRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const teamBlockRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (titleRef.current) {
+      gsap.from(titleRef.current, {
+        opacity: 0,
+        duration: 2,
+        scale: 0.05,
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 90%", // Adjust as needed
+          onEnter: () => {
+            gsap.to(titleRef.current, {
+              opacity: 1,
+              duration: 2,
+              scale: 1,
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(titleRef.current, {
+              opacity: 0,
+              duration: 2,
+              scale: 0.05,
+            });
+          },
+        },
+      });
+    }
+  }, []);
+
+  return (
+    <section className={styles.team} id="team" ref={teamBlockRef}>
+      <h2 className={styles.title} ref={titleRef}>
+        {title}
+      </h2>
+      <div className={styles.wrapper} ref={teamRef}>
+        {team &&
+          team.map((item, index) => {
+            return (
+              <div key={index} className={styles.teamBlockWrap}>
+                <TeamBlock item={item} index={index} />
+              </div>
+            );
+          })}
+      </div>
+      <div className={styles.sliderWrapper}>
+        <Slider {...settings}>
+          {team &&
+            team.map((item, index) => {
               return (
                 <div key={index} className={styles.teamBlockWrap}>
                   <div className={styles.teamBlock}>
                     <div className={styles.img}>
-                      <Image src={item.img} alt={item.name} width={"400"} height={"390"}/>
+                      <Image
+                        src={item.img}
+                        alt={item.name}
+                        width={"400"}
+                        height={"390"}
+                        priority
+                        style={{maxWidth: "100%", height: "100%"}}
+                      />
                     </div>
                     <div className={styles.info}>
                       <h3 className={styles.name}>{item.name}</h3>
@@ -30,13 +103,16 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({ team, title, teamBtn
                   </div>
                 </div>
               );
-            }) : <div>not found</div>}
-          </div>
-          <div className={styles.btns}>
-            <div className={styles.btn}><div className={styles.btnText}>{teamBtn}</div></div>
-          </div>
-        </section>
-      );
-}
+            })}
+        </Slider>
+      </div>
+      <div className={styles.btns}>
+        <div className={styles.btn}>
+          <div className={styles.btnText}>{teamBtn}</div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default TeamSection
+export default TeamSection;

@@ -1,6 +1,8 @@
 @import "@/assets/styles/variables.scss";
 
 .single {
+  overflow: hidden;
+  padding-top: 140px;
   .headSection {
     min-height: 900px;
     padding: 20px 0 100px;
@@ -150,7 +152,6 @@
           transform: translateY(-120px);
         }
         img {
-          width: 100%;
           height: auto;
         }
       }
@@ -628,6 +629,617 @@
         pointer-events: none;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .single {
+    .headSection {
+      min-height: 550px;
+      padding: 0px 0 40px;
+      .title {
+        max-width: 70%;
+        font-size: 45px;
+        line-height: 50px;
+      }
+      .hourWrap {
+        .hourBlock {
+          .hourTitle {
+            font-size: 50px;
+            line-height: 45px;
+            span {
+              font-size: 30px;
+              line-height: 40px;
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    }
+    // main
+
+    .mainTask {
+      padding: 50px 0;
+      .taskTitle {
+        font-size: 45px;
+        line-height: 1.2em;
+        margin-bottom: 15px;
+      }
+      .taskDescr {
+        margin: 0 auto 30px;
+      }
+      .view {
+        height: 550px;
+        .viewBox {
+          height: 550px;
+        }
+      }
+    }
+
+    // dev
+
+    .dev {
+      padding-top: 50px;
+      .devTitle {
+        font-size: 45px;
+        line-height: 1.2em;
+      }
+      .devWrap {
+        .devDescr {
+          padding-left: 10%;
+        }
+      }
+    }
+
+    // responsive
+    .resp {
+      padding-top: 50px;
+      .respTitle {
+        font-size: 45px;
+        line-height: 1.2em;
+        margin-bottom: 15px;
+      }
+      .respDescr {
+        margin: 0 auto 80px;
+      }
+      .respWrap {
+        max-width: 650px;
+        margin: 0 auto;
+        img {
+          width: 197px;
+          height: 382px;
+        }
+        .resImg {
+          &:nth-child(2) {
+            transform: translateY(-50px);
+          }
+        }
+      }
+    }
+    // testing
+
+    .testing {
+      padding: 50px 0;
+      .testingTitle {
+        font-size: 45px;
+        line-height: 1.2em;
+        margin-bottom: 15px;
+      }
+      .taskDescr {
+        max-width: 80%;
+        margin: 0 auto 20px;
+      }
+      .testingWrap {
+        .testingItem {
+          .testItem {
+            .testingObject {
+              font-size: 27px;
+              line-height: 1.1em;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+    // support
+
+    .support {
+      padding: 50px 0 20px 0;
+      .supportTitle {
+        font-size: 45px;
+        line-height: 1.2em;
+        margin-bottom: 15px;
+      }
+      .supportWrap {
+        .supportTextBlock {
+          padding-right: 10%;
+          .supportBlockTitle {
+            font-size: 27px;
+            line-height: 1.1em;
+          }
+        }
+      }
+    }
+    // manage
+
+    .manage {
+      padding: 50px 0 70px 0;
+      .topTitle {
+        font-size: 27px;
+        line-height: 1.1em;
+      }
+      .manageTopWrap {
+        .manageImg {
+          img {
+            max-width: 305px;
+          }
+        }
+      }
+    }
+    // next project
+
+    .nextProject {
+      min-height: 450px;
+      .nextWrapper {
+        min-height: 450px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .single {
+    .headSection {
+      .title {
+        font-size: 36px;
+        line-height: 46px;
+      }
+      .hourWrap {
+        .hourBlock {
+          .hourTitle {
+            font-size: 40px;
+            line-height: 40px;
+            span {
+              font-size: 30px;
+              line-height: 40px;
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    }
+    // main
+
+    .mainTask {
+      .taskTitle {
+        font-size: 35px;
+        line-height: 1.1em;
+      }
+      .taskDescr {
+        margin: 0 auto 30px;
+      }
+      .view {
+        height: 550px;
+        .viewBox {
+          height: 550px;
+        }
+      }
+    }
+
+    // dev
+
+    .dev {
+      .devTitle {
+        font-size: 35px;
+        line-height: 1.1em;
+      }
+      .devWrap {
+        flex-direction: column-reverse;
+        .devDescr {
+          max-width: 90%;
+          margin: 0 auto 30px;
+          padding: 0;
+          text-align: center;
+        }
+        .devImg {
+          width: 100%;
+        }
+      }
+    }
+
+    // responsive
+    .resp {
+      .respTitle {
+        font-size: 35px;
+        line-height: 1.1em;
+      }
+      .respDescr {
+        margin: 0 auto 80px;
+      }
+      .respWrap {
+        max-width: 650px;
+        margin: 0 auto;
+        img {
+          width: 197px;
+          height: 382px;
+        }
+        .resImg {
+          &:nth-child(2) {
+            transform: translateY(-50px);
+          }
+        }
+      }
+    }
+    // testing
+
+    .testing {
+      padding: 50px 0;
+      .testingTitle {
+        font-size: 35px;
+        line-height: 1.1em;
+      }
+      .taskDescr {
+        max-width: 80%;
+        margin: 0 auto 20px;
+      }
+      .testingWrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, minmax(200px, auto));
+        .testingItem {
+          padding: 0 15px;
+          &:nth-child(2) {
+            transform: translateY(100px);
+          }
+          .testItem {
+            ul {
+              li {
+                flex-basis: 100%;
+              }
+            }
+            .testingObject {
+              font-size: 27px;
+              line-height: 1.1em;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+    // support
+
+    .support {
+      padding: 50px 0 20px 0;
+      .supportTitle {
+        font-size: 35px;
+        line-height: 1.1em;
+      }
+      .supportDescr {
+        margin: 0 auto 40px;
+      }
+      .supportWrap {
+        flex-direction: column-reverse;
+        .supportTextBlock {
+          padding-right: 0%;
+          width: 100%;
+          .supportBlockTitle {
+            font-size: 24px;
+          }
+        }
+        .supportImg {
+          width: 100%;
+        }
+      }
+    }
+    // manage
+
+    .manage {
+      padding: 50px 0 70px 0;
+      .topTitle {
+        font-size: 27px;
+        line-height: 1.1em;
+      }
+      .manageTopWrap {
+        flex-wrap: wrap;
+        .topBtnsWrap {
+          svg {
+            width: 34px;
+            right: -20px;
+          }
+        }
+        .manageImg {
+          width: 100%;
+          grid-template-rows: repeat(2, minmax(185px, auto));
+          img {
+            max-width: 305px;
+          }
+        }
+        .topTextBlock {
+          margin-top: 20px;
+          width: 100%;
+          .topTestWrapLast {
+            transform: translateX(0px);
+          }
+          .topBtnsWrap {
+            .bottomImgBtn {
+              min-width: 200px;
+              width: 200px;
+              height: 200px;
+              &:before {
+                min-width: 200px;
+                width: 200px;
+                height: 200px;
+              }
+              &::after {
+                height: 2px;
+                width: 20px;
+              }
+              &:hover {
+                svg {
+                  right: -34px;
+                }
+              }
+              font-size: 28px;
+              word-spacing: 120px;
+            }
+          }
+        }
+      }
+    }
+    // next project
+
+    .nextProject {
+      min-height: 450px;
+      .nextWrapper {
+        min-height: 450px;
+        .nextBtn {
+          min-width: 200px;
+          width: 200px;
+          height: 200px;
+          &:before {
+            min-width: 200px;
+            width: 200px;
+            height: 200px;
+          }
+          &::after {
+            height: 2px;
+            width: 20px;
+          }
+          &:hover {
+            svg {
+              right: -34px;
+            }
+          }
+          svg {
+            width: 34px;
+            right: -20px;
+          }
+
+          font-size: 28px;
+          word-spacing: 120px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .single {
+    .headSection {
+      .title {
+        max-width: 100%;
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 15px;
+      }
+      .hourWrap {
+        .hourBlock {
+          .hourTitle {
+            font-size: 30px;
+            line-height: 30px;
+            span {
+              font-size: 20px;
+              line-height: 27px;
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+    // main
+
+    .mainTask {
+      .taskTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+    }
+
+    // dev
+
+    .dev {
+      .devTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+    }
+
+    // responsive
+    .resp {
+      .respTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+      .respDescr {
+        margin: 0 auto 20px;
+      }
+      .respWrap {
+        display: none;
+      }
+    }
+    // testing
+
+    .testing {
+      .testingTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+      .taskDescr {
+        max-width: 100%;
+      }
+    }
+    // support
+
+    .support {
+      .supportTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+    }
+    // manage
+
+    .manage {
+      .topTitle {
+        font-size: 27px;
+        line-height: 1.1em;
+      }
+      .manageTopWrap {
+        .manageImg {
+          display: none;
+        }
+        .topTextBlock {
+          .topTestWrapLast {
+            .topTitle {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    // next project
+
+    .nextProject {
+      min-height: 450px;
+      .nextWrapper {
+        min-height: 450px;
+      }
+    }
+  }
+}
+
+@media (max-width: 578px) {
+  .single {
+    .headSection {
+      .title {
+        max-width: 100%;
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 15px;
+      }
+      .hourWrap {
+        flex-wrap: wrap;
+        .hourBlock {
+          margin-bottom: 30px;
+          .hourTitle {
+            font-size: 30px;
+            line-height: 30px;
+            span {
+              font-size: 20px;
+              line-height: 27px;
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+    // main
+
+    .mainTask {
+      .taskTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+    }
+
+    // dev
+
+    .dev {
+      .devTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+    }
+
+    // responsive
+    .resp {
+      .respTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+      .respDescr {
+        margin: 0 auto 20px;
+      }
+      .respWrap {
+        display: none;
+      }
+    }
+    // testing
+
+    .testing {
+      .testingTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+      .taskDescr {
+        max-width: 100%;
+      }
+      .testingWrap {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .testingItem {
+          &:nth-child(2) {
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+    // support
+
+    .support {
+      .supportTitle {
+        font-size: 25px;
+        line-height: 1em;
+      }
+    }
+    // manage
+
+    .manage {
+      .topTitle {
+        font-size: 27px;
+        line-height: 1.1em;
+      }
+      .manageTopWrap {
+        .manageImg {
+          display: none;
+        }
+        .topTextBlock {
+          .topTestWrapLast {
+            .topTitle {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    // next project
+
+    .nextProject {
+      min-height: 450px;
+      .nextWrapper {
+        min-height: 450px;
       }
     }
   }

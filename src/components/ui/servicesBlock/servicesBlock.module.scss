@@ -1,9 +1,10 @@
-@import '@/assets/styles/variables.scss';
+@import "@/assets/styles/variables.scss";
 
 .services {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   margin-bottom: 60px;
   .img {
     height: 90px;
@@ -22,11 +23,66 @@
   }
   .title {
     color: $activeTextColor;
-    font-family: "Space Grotesk";
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
     line-height: 28px;
     text-transform: uppercase;
+  }
+}
+
+@media (max-width: 1440px) {
+  .services {
+    width: 300px;
+    margin-bottom: 40px;
+    justify-content: left;
+  }
+}
+
+@media (max-width: 992px) {
+  .services {
+    width: 280px;
+    margin-bottom: 40px;
+    justify-content: left;
+    .img {
+      height: 80px;
+      width: 80px;
+      img {
+        max-width: 40px;
+        max-height: 40px;
+      }
+    }
+    .title {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    width: 100%;
+    margin-bottom:10px;
+    justify-content: left;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      justify-content: right;
+      .img {
+        margin-left: 20px;
+      }
+      .title {
+        font-size: 18px;
+      }
+    }
+    .img {
+      height: 80px;
+      width: 80px;
+      img {
+        max-width: 40px;
+        max-height: 40px;
+      }
+    }
+    .title {
+      font-size: 20px;
+    }
   }
 }

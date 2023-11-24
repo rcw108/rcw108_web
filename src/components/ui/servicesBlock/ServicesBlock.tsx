@@ -1,22 +1,69 @@
-import { FC, PropsWithChildren } from 'react'
-import Image from 'next/image';
+"use client";
 
-import styles from './servicesBlock.module.scss';
+import { FC, PropsWithChildren, useRef, useEffect, RefObject } from "react";
+import Image from "next/image";
 
-interface IServicesBlock { 
-    img: string;
-    title: string;
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+import styles from "./servicesBlock.module.scss";
+
+gsap.registerPlugin(ScrollTrigger);
+
+interface IServicesBlock {
+  img: string;
+  title: string;
+  index: number;
+  servicesRef: RefObject<HTMLDivElement>;
 }
 
-const ServicesBlock: FC<PropsWithChildren<IServicesBlock>> = ({img, title}) => {
-    return (
-        <div className={styles.services}>
-            <div className={styles.img}>
-                <Image src={img} alt={title} width={"60"} height={"60"}/>
-            </div>
-            <h3 className={styles.title}>{title}</h3>
-        </div>
-     )
-}
+const ServicesBlock: FC<PropsWithChildren<IServicesBlock>> = ({
+  img,
+  title,
+  index,
+  servicesRef,
+}) => {
+  const serviceRef = useRef<HTMLDivElement>(null);
 
-export default ServicesBlock
+  useEffect(() => {
+    if (serviceRef.current) {
+      gsap.from(serviceRef.current, {
+        opacity: 0,
+        duration: 2,
+        x: -(100 * index),
+        delay: index * 0.2,
+        scrollTrigger: {
+          trigger: serviceRef.current,
+          start: "top 80%", // Adjust as needed
+          onEnter: () => {
+            gsap.to(serviceRef.current, {
+              opacity: 1,
+              duration: 2,
+              x: 0,
+              delay: index * 0.2,
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(serviceRef.current, {
+              opacity: 0,
+              duration: 3,
+              x: -(100 * index),
+              delay: index * 0.2,
+            });
+          },
+        },
+      });
+    }
+  }, []);
+
+  return (
+    <div className={styles.services} ref={serviceRef}>
+      <div className={styles.img} >
+        <Image src={img} alt={title} width={"60"} height={"60"} style={{maxWidth: "100%", height: "100%"}}/>
+      </div>
+      <h3 className={styles.title}>{title}</h3>
+    </div>
+  );
+};
+
+export default ServicesBlock;

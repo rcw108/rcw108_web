@@ -129,4 +129,60 @@
       }
     }
   }
+  .sliderWrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 1440px) {
+  .team {
+    .title {
+      font-size: 45px;
+      line-height: 1.2em;
+      margin-bottom: 15px;
+    }
+    .wrapper {
+      .teamBlockWrap {
+        padding: 15px;
+        .teamBlock {
+          .img {
+            height: 320px;
+            img {
+              height: 320px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .team {
+    .wrapper {
+      display: none;
+    }
+    .sliderWrapper {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .team {
+    .wrapper {
+      display: none;
+    }
+    .teamBlockWrap {
+      padding: 10px;
+      .teamBlock {
+        .img {
+          height: 280px;
+          img {
+            height: 280px;
+          }
+        }
+      }
+    }
+  }
 }

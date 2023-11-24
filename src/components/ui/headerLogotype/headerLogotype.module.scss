@@ -1,0 +1,25 @@
+.circle {
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.circle1 {
+  animation: blink3 ease 2s 1.7s forwards;
+}
+
+.circle2 {
+  animation: blink3 ease 2.5s 1.7s forwards;
+}
+
+.circle3 {
+  animation: blink3 ease 3s 1.7s forwards;
+}
+
+@keyframes blink3 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

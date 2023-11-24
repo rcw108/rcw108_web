@@ -1,8 +1,9 @@
 @import "@/assets/styles/variables.scss";
 
 .projectWrap {
-  width: 50%;
-  padding: 0 50px;
+  width: 100%;
+  padding: 0 25px;
+  overflow: hidden;
 }
 
 .project {
@@ -14,6 +15,30 @@
   width: 100%;
   min-height: 706px;
   background-color: #e5e7f2;
+  transition: background-color .5s ease;
+  &:hover {
+    background-color: #fff;
+    .content {
+      transition: all .5s ease;
+      background-color: #fff;
+      border-top: 2px solid $activeTextColor;
+      .btns {
+        transition: all .5s ease;
+        .web {
+          transition: all .5s ease;
+          .webText {
+            transition: all .5s ease;
+            color: $activeTextColor;
+          }
+        }
+        .detail {
+          &::after {
+            background-color: $activeTextColor;
+          }
+        }
+      }
+    }
+  }
   a {
     color: #fff;
   }
@@ -43,21 +68,26 @@
     }
   }
   .content {
+    transition: border 0.5s ease;
+    transition: background-color .5s ease;
     padding: 40px 30px 30px;
     background-color: #e5e7f2;
+    border-top: 2px solid transparent;
     height: auto;
     .title {
       font-size: 35px;
       line-height: 1.2em;
       font-weight: 700;
       color: $mainTextColor;
+      text-transform: lowercase;
+      text-transform: capitalize !important;
     }
     .descr {
       color: $mainTextColor;
       font-weight: 400;
       font-size: 27px;
       line-height: 30px;
-      margin-bottom: 40px;
+      margin: 20px 0;
     }
     .btns {
       display: flex;
@@ -107,7 +137,7 @@
           position: absolute;
           width: 10px;
           height: 10px;
-          top: calc(50% - 0.2rem);
+          top: 50%;
           right: 1.5rem;
           border-radius: 50%;
           background-color: #fff;
@@ -119,6 +149,7 @@
           transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
           transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1),
             -webkit-transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform: translateY(-50%);
         }
         &:hover::after {
           -webkit-transform: translate3d(4.4rem, 0, 0) scale(0.2);
@@ -130,6 +161,7 @@
         }
       }
       .web {
+        transition: all .5s ease;
         display: -webkit-inline-box;
         display: -ms-inline-flexbox;
         display: inline-flex;
@@ -181,6 +213,7 @@
           transform: translateX(-5px);
         }
         .webText {
+          transition: all .5s ease;
           font-weight: 700;
           font-size: 24px;
           line-height: 23px;
@@ -200,7 +233,7 @@
             position: absolute;
             width: 10px;
             height: 10px;
-            top: calc(50% - 0.2rem);
+            top: 50%;
             right: 1.5rem;
             border-radius: 50%;
             background-color: #000;
@@ -219,6 +252,97 @@
             -webkit-transform: translate3d(2.7rem, 0, 0) scale(1);
             transform: translate3d(2.7rem, 0, 0) scale(1);
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1450px) {
+  .project {
+    .content {
+      position: relative;
+      min-height: 350px;
+      .title {
+        margin-bottom: 30px;
+      }
+      .btns {
+        position: absolute;
+        content: "";
+        bottom: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .projectWrap {
+    padding: 0 15px;
+  }
+  .project {
+    .content {
+      position: relative;
+      min-height: 350px;
+      .title {
+        margin-bottom: 15px;
+      }
+      .btns {
+        position: absolute;
+        content: "";
+        bottom: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .projectWrap {
+    width: 100%;
+  }
+  .project {
+    min-height: 500px;
+    .img {
+      height: 340px;
+      img {
+        height: 100%;
+        object-position: top left;
+      }
+    }
+    .content {
+      min-height: 280px;
+      padding: 25px 40px;
+    }
+  }
+}
+
+@media (max-width: 578px) {
+  .projectWrap {
+    padding: 0 5px;
+  }
+  .project {
+    .img {
+      height: 260px;
+    }
+    .content {
+      padding: 25px 10px;
+      min-height: 240px;
+      .title {
+        font-size: 22px;
+      }
+      .descr {
+        font-size: 18px;
+      }
+      .btns {
+        bottom: 20px;
+        .web {
+          padding: 1rem;
+          .webText {
+            font-size: 16px;
+          }
+        }
+        .detail {
+          padding: 1rem 2rem;
+          font-size: 16px;
         }
       }
     }

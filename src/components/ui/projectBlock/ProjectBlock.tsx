@@ -1,12 +1,17 @@
-'use client'
+"use client";
 
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useRef, useEffect } from "react";
 
 import Image from "next/image";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import styles from "./projectBlock.module.scss";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface IProjectBlock {
   id: number;
@@ -14,6 +19,7 @@ interface IProjectBlock {
   title: string;
   description: string;
   web: string;
+  index: number;
 }
 
 const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
@@ -22,21 +28,57 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
   title,
   description,
   web,
+  index,
 }) => {
   const searchParams = useSearchParams();
 
-  const search = searchParams.getAll('search')
+  const search = searchParams.getAll("search");
+
+  const projectRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (projectRef.current) {
+      gsap.from(projectRef.current, {
+        opacity: 0,
+        duration: 2,
+        delay: index ? index * 0.2 : 0,
+        y: "100%",
+        scrollTrigger: {
+          trigger: projectRef.current,
+          start: "top 1600", // Adjust as needed
+          onEnter: () => {
+            gsap.to(projectRef.current, {
+              opacity: 1,
+              duration: 2,
+              delay: index ? index * 0.2 : 0,
+              y: 0,
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(projectRef.current, {
+              opacity: 0,
+              duration: 3,
+              delay: index ? index * 0.2 : 0,
+              y: "100%",
+            });
+          },
+        },
+      });
+    }
+  }, []);
 
   return (
     <div className={styles.projectWrap}>
-      <div className={styles.project}>
+      <div className={styles.project} ref={projectRef}>
         <div className={styles.img}>
           <Image
             src={image}
             alt={title}
             height={"455"}
             width={430}
+            priority
             loading="eager"
+            style={{maxWidth: "100%", height: "100%"}}
           />
         </div>
         <div className={styles.content}>

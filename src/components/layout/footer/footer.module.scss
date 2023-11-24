@@ -43,6 +43,14 @@
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    svg {
+      fill: #fff;
+      path,
+      line {
+        fill: #fff;
+        stroke: #fff;
+      }
+    }
   }
   .title {
     display: flex;
@@ -169,6 +177,66 @@
       display: flex;
       margin-bottom: 0;
       flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 1450px) {
+  .footer {
+    .title {
+      h2 {
+        font-size: 45px;
+      }
+    }
+    .contact {
+      .btn {
+        font-size: 18px;
+        line-height: 18px;
+        padding: 0.7rem 1.5rem 0.7rem 1rem;
+        &::after {
+          width: 4px;
+          height: 4px;
+          top: calc(50% - 1px);
+          right: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .footer {
+    margin: 50px 0 0 0;
+    &::after {
+      position: relative;
+    }
+    .block,
+    .last {
+      border-radius: 0;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    .title {
+      h2 {
+        font-size: 35px;
+      }
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .footer {
+    margin: 0;
+    .title {
+      display: none;
+    }
+    .block {
+      .content {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 }

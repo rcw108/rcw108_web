@@ -1,8 +1,12 @@
 .header {
-    min-height: 120px;
+    position: fixed;
+    background-color: #fff;
+    min-height: 100px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 995;
 
     .wrapper {
         display: flex;

@@ -25,7 +25,7 @@ const Header: FC =  ({}) => {
             <div className={styles.logotype}>
               <HeaderLogotype/>
             </div>
-            <Navigation />
+            <Navigation/>
           </div>
         </div>
       </header>

@@ -3,6 +3,7 @@ import { FC } from 'react'
 import styles from './footer.module.scss';
 
 import Link from 'next/link';
+import HeaderLogotype from '@/components/ui/headerLogotype/HeaderLogotype';
 
 const Footer: FC = () => {
     return (
@@ -10,7 +11,7 @@ const Footer: FC = () => {
           <div className={styles.block}>
             <div className={styles.content}>
               <div className={styles.logo}>
-                {/* <img src="" alt="" /> */}
+                <HeaderLogotype/>
               </div>
               <div className={styles.title}>
                 <h2>RCW 108</h2>

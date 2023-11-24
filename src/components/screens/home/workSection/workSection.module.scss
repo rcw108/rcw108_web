@@ -1,7 +1,8 @@
 @import "@/assets/styles/variables.scss";
 
 .works {
-  padding: 100px 0 0px 0;
+  padding: 100px 0 40px 0;
+  overflow: hidden;
   .title {
     font-size: 50px;
     line-height: 1.3em;
@@ -165,6 +166,84 @@
           background-color: #fff;
           -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .works {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .title {
+      font-size: 35px;
+      line-height: 1.1em;
+    }
+    .descr {
+      max-width: 80%;
+    }
+    .wrapper {
+      .contentWrap {
+        width: 100%;
+        .contentTitle {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .works {
+    .btns {
+      .button {
+        min-width: 160px;
+        width: 160px;
+        height: 160px;
+        font-size: 20px;
+        word-spacing: 120px;
+        line-height: 26px;
+        svg {
+          width: 33px;
+          right: -29px;
+        }
+        &:hover {
+          svg {
+            right: -38px;
+          }
+          &::after {
+            right: -12px;
+          }
+        }
+        &::after {
+          height: 2px;
+          width: 20px;
+        }
+      }
+    }
+    .title {
+      font-size: 35px;
+      line-height: 1.1em;
+    }
+    .descr {
+      max-width: 80%;
+    }
+    .wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .contentWrap {
+        width: 100%;
+        ul {
+          text-align: center;
+        }
+        li {
+          display: inline-block;
+        }
+        .contentTitle {
+          font-size: 24px;
+          text-align: center;
         }
       }
     }
