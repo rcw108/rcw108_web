@@ -43,12 +43,12 @@ const HeadSection: FC<PropsWithChildren<iHeadSection>> = ({
       });
     }
     if (wrapperRef.current) {
-      gsap.from(wrapperRef.current, { opacity: 0, y: "200%" });
+      gsap.from(wrapperRef.current, { opacity: 0, y: "200%", delay: 2,});
 
       gsap.to(wrapperRef.current, {
         opacity: 1,
         duration: 2,
-        delay: 1.5,
+        delay: 2,
         y: "0%",
       });
     }

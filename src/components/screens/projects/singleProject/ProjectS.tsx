@@ -664,21 +664,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                         <span>
                           {project.acf?.text_button_mn.replace(/<\/?br>/g, "")}
                         </span>
-                        <svg
-                          version="1.1"
-                          className={styles.circleSvg1}
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlnsXlink="http://www.w3.org/1999/xlink"
-                          x="0px"
-                          y="0px"
-                          viewBox="0 0 149.955 149.955"
-                          xmlSpace="preserve"
-                        >
-                          <path
-                            d="M149.945,98.318l-0.906-93.803c-0.022-2.072-1.7-3.75-3.772-3.765L51.634,0l-0.06,7.603l84.735,0.679
-        L0.011,144.579l5.376,5.376L141.525,13.817l0.816,84.575L149.945,98.318z"
-                          ></path>
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -697,18 +682,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                 <Link href={`/projects/${nextProj.id}`}>
                   <div className={styles.nextBtn}>
                     <span>Next Project</span>
-                    <svg
-                      version="1.1"
-                      className="circle-svg1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 149.955 149.955"
-                      xmlSpace="preserve"
-                    >
-                      <path d="M149.945,98.318l-0.906-93.803c-0.022-2.072-1.7-3.75-3.772-3.765L51.634,0l-0.06,7.603l84.735,0.679 L0.011,144.579l5.376,5.376L141.525,13.817l0.816,84.575L149.945,98.318z"></path>
-                    </svg>
                   </div>
                 </Link>
               </div>

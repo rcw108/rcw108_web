@@ -44,7 +44,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
         y: 450,
         scrollTrigger: {
           trigger: titleRef.current,
-          start: "top 100%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,

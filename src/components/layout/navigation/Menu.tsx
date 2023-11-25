@@ -24,7 +24,9 @@ const Menu: FC<PropsWithChildren<any>> = ({ menu }) => {
 
   return (
     <>
-      <div className={`${styles.mobileLogo} ${openMenu ? styles.activeLogo : ""}`}>
+      <div
+        className={`${styles.mobileLogo} ${openMenu ? styles.activeLogo : ""}`}
+      >
         <HeaderLogotype />
       </div>
       <nav className={styles.nav}>
@@ -52,13 +54,16 @@ const Menu: FC<PropsWithChildren<any>> = ({ menu }) => {
                   if (item.url.endsWith(".com/")) {
                     pathName = "/";
                   } else if (item.url.includes(".com")) {
-                    pathName = item.url.substr(item.url.indexOf(".com") + 4);
+                    pathName = item.url
+                      .replace("http://", "")
+                      .substr(item.url.indexOf(".com") + 8);
                     if (pathName.endsWith("/")) {
                       pathName = pathName.slice(0, -1);
                     }
                   } else {
-                    pathName = item.url;
+                    pathName = item.url.replace("http://", "");
                   }
+                  console.log(pathName);
 
                   return (
                     <li key={index} className={`${styles.menuItem}`}>

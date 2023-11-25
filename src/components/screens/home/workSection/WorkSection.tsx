@@ -36,7 +36,7 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
         y: 450,
         scrollTrigger: {
           trigger: titleRef.current,
-          start: "top",
+          start: "top 1500",
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,
@@ -55,7 +55,7 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
         y: 450,
         scrollTrigger: {
           trigger: descrRef.current,
-          start: "top",
+          start: "top 1500",
           onEnter: () => {
             gsap.to(descrRef.current, {
               opacity: 1,
@@ -73,7 +73,7 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
         y: 450,
         scrollTrigger: {
           trigger: workRef.current,
-          start: "top",
+          start: "top 1500",
           onEnter: () => {
             gsap.to(workRef.current, {
               opacity: 1,
