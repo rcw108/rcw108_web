@@ -50,23 +50,16 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
     if (titleRef.current) {
       gsap.from(titleRef.current, {
         opacity: 0,
-        scale: 0.05,
+        y: 450,
         duration: 1,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 100%", // Adjust as needed
+          start: "top 80%", // Adjust as needed
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,
-              scale: 1,
               duration: 2,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(titleRef.current, {
-              opacity: 0,
-              scale: 0.05,
-              duration: 2,
+              y: 0,
             });
           },
         },
@@ -76,21 +69,14 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
       gsap.from(secondTitleRef.current, {
         opacity: 0,
         duration: 1.5,
-        x: 450,
+        y: 450,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%", // Adjust as needed
+          start: "top 70%", // Adjust as needed
           onEnter: () => {
             gsap.to(secondTitleRef.current, {
               opacity: 1,
-              x: 0,
-              duration: 1.5,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(secondTitleRef.current, {
-              opacity: 0,
-              x: 450,
+              y: 0,
               duration: 1.5,
             });
           },
@@ -112,13 +98,6 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
               duration: 1.5,
             });
           },
-          onLeaveBack: () => {
-            gsap.to(subTitleRef.current, {
-              opacity: 0,
-              y: 150,
-              duration: 1.5,
-            });
-          },
         },
       });
     }
@@ -132,12 +111,6 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
           onEnter: () => {
             gsap.to(imagesRef.current, {
               opacity: 1,
-              duration: 2,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(imagesRef.current, {
-              opacity: 0,
               duration: 2,
             });
           },

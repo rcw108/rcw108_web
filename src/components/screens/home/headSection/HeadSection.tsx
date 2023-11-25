@@ -27,29 +27,29 @@ const HeadSection: FC<PropsWithChildren<iHeadSection>> = ({
 
   useEffect(() => {
     if (titleRef.current) {
-      gsap.to(titleRef.current, { opacity: 1, duration: 2, delay: 0.5 });
+      gsap.to(titleRef.current, { opacity: 1, duration: 2, delay: 1.5 });
     }
     if (secondTitleRef.current) {
-      gsap.to(secondTitleRef.current, { opacity: 1, duration: 2, delay: 1 });
+      gsap.to(secondTitleRef.current, { opacity: 1, duration: 2, delay: 2 });
     }
     if (subTitleRef.current) {
-      gsap.from(subTitleRef.current, { scale: 0.05 });
+      gsap.from(subTitleRef.current, { scale: 0.05, opacity: 0, duration: 2 });
 
       gsap.to(subTitleRef.current, {
         opacity: 1,
         scale: 1,
         duration: 2,
-        delay: 1.5,
+        delay: 0.5,
       });
     }
     if (wrapperRef.current) {
-      gsap.from(wrapperRef.current, { opacity: 0, x: "150%" });
+      gsap.from(wrapperRef.current, { opacity: 0, y: "200%" });
 
       gsap.to(wrapperRef.current, {
         opacity: 1,
-        duration: 1,
-        delay: 2,
-        x: "0%",
+        duration: 2,
+        delay: 1.5,
+        y: "0%",
       });
     }
   }, []);

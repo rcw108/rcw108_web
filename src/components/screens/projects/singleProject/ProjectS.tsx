@@ -46,7 +46,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(titleRef.current, {
         opacity: 0,
         duration: 2,
-        scale: 0.05,
+        scale: 0.5,
         scrollTrigger: {
           trigger: titleRef.current,
           start: "top 100%", // Adjust as needed
@@ -55,14 +55,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               opacity: 1,
               duration: 2,
               scale: 1,
-              y: 0,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(titleRef.current, {
-              opacity: 0,
-              duration: 3,
-              scale: 0.05,
             });
           },
         },
@@ -72,23 +64,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(taskTitleRef.current, {
         opacity: 0,
         duration: 2,
-        scale: 0.05,
+        y: 450,
         scrollTrigger: {
           trigger: taskTitleRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(taskTitleRef.current, {
               opacity: 1,
               duration: 2,
-              scale: 1,
               y: 0,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(taskTitleRef.current, {
-              opacity: 0,
-              duration: 3,
-              scale: 0.05,
             });
           },
         },
@@ -98,22 +82,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(devTitleRef.current, {
         opacity: 0,
         duration: 2,
-        scale: 0.05,
+        y: 450,
         scrollTrigger: {
           trigger: devTitleRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(devTitleRef.current, {
               opacity: 1,
               duration: 2,
-              scale: 1,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(devTitleRef.current, {
-              opacity: 0,
-              duration: 3,
-              scale: 0.05,
+              y: 0,
             });
           },
         },
@@ -123,22 +100,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(testingTitleRef.current, {
         opacity: 0,
         duration: 2,
-        scale: 0.05,
+        y: 450,
         scrollTrigger: {
           trigger: testingTitleRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(testingTitleRef.current, {
               opacity: 1,
               duration: 2,
-              scale: 1,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(testingTitleRef.current, {
-              opacity: 0,
-              duration: 3,
-              scale: 0.05,
+              y: 0,
             });
           },
         },
@@ -148,22 +118,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(respTitleRef.current, {
         opacity: 0,
         duration: 2,
-        scale: 0.05,
+        y: 450,
         scrollTrigger: {
           trigger: respTitleRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(respTitleRef.current, {
               opacity: 1,
               duration: 2,
-              scale: 1,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(respTitleRef.current, {
-              opacity: 0,
-              duration: 3,
-              scale: 0.05,
+              y: 0,
             });
           },
         },
@@ -173,24 +136,17 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(supTitleRef.current, {
         opacity: 0,
         duration: 2,
-        scale: 0.05,
+        y: 450,
         scrollTrigger: {
           trigger: supTitleRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(supTitleRef.current, {
               opacity: 1,
               duration: 2,
-              scale: 1,
+              y: 0,
             });
-          },
-          onLeaveBack: () => {
-            gsap.to(supTitleRef.current, {
-              opacity: 0,
-              duration: 3,
-              scale: 0.05,
-            });
-          },
+          }
         },
       });
     }
@@ -198,22 +154,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(manageTitleRef.current, {
         opacity: 0,
         duration: 2,
-        scale: 0.05,
+        y: 450,
         scrollTrigger: {
           trigger: manageTitleRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(manageTitleRef.current, {
               opacity: 1,
               duration: 2,
-              scale: 1,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(manageTitleRef.current, {
-              opacity: 0,
-              duration: 3,
-              scale: 0.05,
+              y: 0,
             });
           },
         },
@@ -224,22 +173,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(taskDescrRef.current, {
         opacity: 0,
         duration: 2,
-        x: "100%",
+        y: 450,
         scrollTrigger: {
           trigger: taskDescrRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(taskDescrRef.current, {
               opacity: 1,
               duration: 2,
-              x: "0%",
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(taskDescrRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "100%",
+              y:0,
             });
           },
         },
@@ -260,13 +202,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               x: "0%",
             });
           },
-          onLeaveBack: () => {
-            gsap.to(devTextRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "100%",
-            });
-          },
         },
       });
     }
@@ -274,22 +209,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(testingDescrRef.current, {
         opacity: 0,
         duration: 2,
-        x: "100%",
+        y: 450,
         scrollTrigger: {
           trigger: testingDescrRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(testingDescrRef.current, {
               opacity: 1,
               duration: 2,
-              x: "0%",
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(testingDescrRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "100%",
+              y: 0,
             });
           },
         },
@@ -299,22 +227,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(respDescrRef.current, {
         opacity: 0,
         duration: 2,
-        x: "-100%",
+        y: 450,
         scrollTrigger: {
           trigger: respDescrRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(respDescrRef.current, {
               opacity: 1,
               duration: 2,
-              x: "0%",
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(respDescrRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "-100%",
+              y: 0,
             });
           },
         },
@@ -324,22 +245,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(supDescrRef.current, {
         opacity: 0,
         duration: 2,
-        x: "100%",
+        y: 450,
         scrollTrigger: {
           trigger: supDescrRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(supDescrRef.current, {
               opacity: 1,
               duration: 2,
-              x: "0%",
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(supDescrRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "100%",
+              y: 0,
             });
           },
         },
@@ -349,22 +263,15 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(manageDescrRef.current, {
         opacity: 0,
         duration: 2,
-        x: "100%",
+        y: 450,
         scrollTrigger: {
           trigger: manageDescrRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(manageDescrRef.current, {
               opacity: 1,
               duration: 2,
-              x: "0%",
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(manageDescrRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "100%",
+              y: 0,
             });
           },
         },
@@ -383,13 +290,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
             gsap.to(hourRef.current, {
               opacity: 1,
               duration: 2,
-              delay: 1,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(hourRef.current, {
-              opacity: 0,
-              duration: 3,
               delay: 1,
             });
           },
@@ -412,13 +312,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               x: "0%",
             });
           },
-          onLeaveBack: () => {
-            gsap.to(devImgRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "-100%",
-            });
-          },
         },
       });
     }
@@ -436,13 +329,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               opacity: 1,
               duration: 2,
               x: "0%",
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(manageRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "-100%",
             });
           },
         },
@@ -464,13 +350,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               x: "0%",
             });
           },
-          onLeaveBack: () => {
-            gsap.to(supImgRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "100%",
-            });
-          },
         },
       });
     }
@@ -487,13 +366,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               opacity: 1,
               duration: 2,
               x: "0%",
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(supTextRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "-100%",
             });
           },
         },
@@ -513,13 +385,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               opacity: 1,
               duration: 2,
               y: "0%",
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(respImgRef.current, {
-              opacity: 0,
-              duration: 3,
-              y: "100%",
             });
           },
         },

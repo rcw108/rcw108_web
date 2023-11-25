@@ -5,7 +5,7 @@
   padding-bottom: 70px;
   .title {
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     line-height: 1.3em;
     margin-bottom: 20px;
     font-weight: 700;
@@ -30,8 +30,9 @@
     overflow: hidden;
   }
   .img {
-    background-color: #e5e7f2;
+    background-color: #fff;
     height: 390px;
+    border-bottom: 2px solid $activeTextColor;
     img {
       object-fit: cover;
       width: 100%;
@@ -41,25 +42,25 @@
   .info {
     height: 156px;
     padding: 40px 30px;
-    background-color: #e5e7f2;
+    background-color: #fff;
     .name {
       margin-bottom: 10px;
-      font-size: 30px;
-      line-height: 1.2em;
+      font-size: 25px;
+      line-height: 35px;
       font-weight: 700;
       color: $mainTextColor;
     }
     .position {
-      font-size: 21px;
-      color: $mainTextColor;
-      line-height: 30px;
+      font-size: 18px;
+      color: $activeTextColor;
+      line-height: 25px;
     }
   }
   .btns {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 40px;
     .btn {
       cursor: pointer;
       color: #fff;
@@ -137,7 +138,7 @@
 @media (max-width: 1440px) {
   .team {
     .title {
-      font-size: 45px;
+      font-size: 35px;
       line-height: 1.2em;
       margin-bottom: 15px;
     }

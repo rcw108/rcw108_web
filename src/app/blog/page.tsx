@@ -2,8 +2,8 @@ import BlogPage from "@/components/screens/blog/Blog";
 import { Metadata } from "next";
 
 async function fetchData() {
-  const res = await fetch(`https://rcw108.com/wp-json/wp/v2/posts`, {
-    next: { revalidate: 3600 },
+  const res = await fetch(`https://rcw108.com/dev/wp-json/wp/v2/posts`, {
+    cache: "force-cache",
   });
 
   if (!res.ok) {

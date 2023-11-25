@@ -11,15 +11,17 @@
     width: 100%;
     border: none;
     outline: none;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 18px;
     line-height: 33px;
     color: #000;
     border-bottom: 1px solid #939fb7;
     border-radius: 0;
     padding: 10px 0 9px;
+    background-color: #F6F5F9;
     &::placeholder {
       color: #000;
+      font-size: 18px;
     }
     &:focus {
       border-color: $activeTextColor;

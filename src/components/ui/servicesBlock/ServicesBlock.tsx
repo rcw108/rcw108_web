@@ -30,25 +30,17 @@ const ServicesBlock: FC<PropsWithChildren<IServicesBlock>> = ({
       gsap.from(serviceRef.current, {
         opacity: 0,
         duration: 2,
-        x: -(100 * index),
-        delay: index * 0.2,
+        x: -(50 * index),
+        delay: index * 0.1,
         scrollTrigger: {
           trigger: serviceRef.current,
-          start: "top 80%", // Adjust as needed
+          start: "top 70%", // Adjust as needed
           onEnter: () => {
             gsap.to(serviceRef.current, {
               opacity: 1,
               duration: 2,
               x: 0,
-              delay: index * 0.2,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(serviceRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: -(100 * index),
-              delay: index * 0.2,
+              delay: index * 0.1,
             });
           },
         },

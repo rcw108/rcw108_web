@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { FC, PropsWithChildren, useRef, useEffect } from "react";
 import Image from "next/image";
@@ -41,22 +41,15 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
       gsap.from(titleRef.current, {
         opacity: 0,
         duration: 2,
-        scale: 0.05,
+        y: 450,
         scrollTrigger: {
           trigger: titleRef.current,
-          start: "top 90%", // Adjust as needed
+          start: "top 100%", // Adjust as needed
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,
               duration: 2,
-              scale: 1,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(titleRef.current, {
-              opacity: 0,
-              duration: 2,
-              scale: 0.05,
+              y: 0,
             });
           },
         },
@@ -93,7 +86,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
                         width={"400"}
                         height={"390"}
                         priority
-                        style={{maxWidth: "100%", height: "100%"}}
+                        style={{ maxWidth: "100%", height: "100%" }}
                       />
                     </div>
                     <div className={styles.info}>

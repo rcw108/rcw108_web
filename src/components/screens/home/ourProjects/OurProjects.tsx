@@ -23,7 +23,7 @@ export default function OurProjects({
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://rcw108.com/wp-json/wp/v2/projects?acf_format=standard"
+          "https://rcw108.com/dev/wp-json/wp/v2/projects?acf_format=standard"
         );
 
         if (!response.ok) {

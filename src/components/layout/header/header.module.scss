@@ -1,16 +1,17 @@
 .header {
-    position: fixed;
-    background-color: #fff;
-    min-height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 995;
+  position: fixed;
+  background-color: #fff;
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 995;
+  box-shadow: 0px 3px 8px 0px rgba(56, 60, 87, 0.1);
 
-    .wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

@@ -18,6 +18,7 @@ interface IteamBlock {
 
 const TeamBlock: FC<PropsWithChildren<IteamBlock>> = ({ item, index }) => {
   const teamRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (teamRef.current) {
@@ -27,22 +28,14 @@ const TeamBlock: FC<PropsWithChildren<IteamBlock>> = ({ item, index }) => {
         duration: 1,
         delay: index * 0.2,
         scrollTrigger: {
-          trigger: teamRef.current,
-          start: "top 450",
+          trigger: triggerRef.current,
+          start: "top 50%",
           onEnter: () => {
             gsap.to(teamRef.current, {
               opacity: 1,
               duration: 2,
               delay: index * 0.2,
               x: 0,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(teamRef.current, {
-              opacity: 0,
-              duration: 3,
-              delay: index * 0.2,
-              x: "-100%",
             });
           },
         },
@@ -53,7 +46,7 @@ const TeamBlock: FC<PropsWithChildren<IteamBlock>> = ({ item, index }) => {
   return (
     <>
       <div className={styles.teamBlock} ref={teamRef}>
-        <div className={styles.img}>
+        <div className={styles.img} ref={triggerRef}>
           <Image src={item.img} alt={item.name} width={"400"} height={"390"} />
         </div>
         <div className={styles.info}>

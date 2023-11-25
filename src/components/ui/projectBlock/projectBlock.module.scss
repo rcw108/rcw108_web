@@ -8,19 +8,19 @@
 
 .project {
   border-radius: 16px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   overflow: hidden;
   -webkit-box-shadow: #c8cad6 4px 4px 4px, #fdfdff -4px -4px 4px;
   box-shadow: #c8cad6 4px 4px 4px, #fdfdff -4px -4px 4px;
   width: 100%;
-  min-height: 706px;
-  background-color: #e5e7f2;
+  min-height: 680px;
+  background-color: #F9F9F9;
   transition: background-color .5s ease;
   &:hover {
-    background-color: #fff;
+    background-color: #F9F9F9;
     .content {
       transition: all .5s ease;
-      background-color: #fff;
+      background-color: #F9F9F9;
       border-top: 2px solid $activeTextColor;
       .btns {
         transition: all .5s ease;
@@ -70,8 +70,8 @@
   .content {
     transition: border 0.5s ease;
     transition: background-color .5s ease;
-    padding: 40px 30px 30px;
-    background-color: #e5e7f2;
+    padding: 30px 30px 20px;
+    background-color: #F9F9F9;
     border-top: 2px solid transparent;
     height: auto;
     .title {
@@ -79,15 +79,14 @@
       line-height: 1.2em;
       font-weight: 700;
       color: $mainTextColor;
-      text-transform: lowercase;
       text-transform: capitalize !important;
     }
     .descr {
       color: $mainTextColor;
       font-weight: 400;
-      font-size: 27px;
+      font-size: 18px;
       line-height: 30px;
-      margin: 20px 0;
+      margin: 10px 0 20px 0;
     }
     .btns {
       display: flex;
@@ -103,11 +102,14 @@
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        font-weight: 700;
-        font-size: 24px;
+        font-weight: 500;
+        font-size: 18px;
         line-height: 23px;
+        text-transform: uppercase;
         white-space: nowrap;
-        padding: 1.1rem 2.4rem 1.1rem 2.1rem;
+        width: 200px;
+        height: 50px;
+        // padding: 1.1rem 2.4rem 1.1rem 2.1rem;
         border-radius: 50px;
         color: #fff;
         background-color: #000;
@@ -135,8 +137,8 @@
         &::after {
           content: "";
           position: absolute;
-          width: 10px;
-          height: 10px;
+          width: 6px;
+          height: 6px;
           top: 50%;
           right: 1.5rem;
           border-radius: 50%;
@@ -171,9 +173,10 @@
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        font-weight: 700;
-        font-size: 24px;
+        font-weight: 500;
+        font-size: 18px;
         line-height: 23px;
+        text-transform: uppercase;
         color: $mainTextColor;
         white-space: nowrap;
         padding: 1.1rem 2.4rem 1.1rem 2.1rem;
@@ -191,14 +194,14 @@
         &::after {
           content: "";
           position: absolute;
-          width: 10px;
-          height: 10px;
-          top: calc(50% - 0.2rem);
+          width: 6px;
+          height: 6px;
+          top: 50%;
           right: 1.5rem;
           border-radius: 50%;
           background-color: #000;
-          -webkit-transform: translate3d(4.4rem, 0, 0) scale(0.2);
-          transform: translate3d(4.4rem, 0, 0) scale(0.2);
+          -webkit-transform: translate3d(4.4rem, -50%, 0) scale(0.2);
+          transform: translate3d(4.4rem, -0, 0) scale(0.2);
           will-change: transform;
           -webkit-transition: -webkit-transform 0.7s
             cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -214,8 +217,8 @@
         }
         .webText {
           transition: all .5s ease;
-          font-weight: 700;
-          font-size: 24px;
+          font-weight: 500;
+          font-size: 18px;
           line-height: 23px;
           color: $mainTextColor;
           text-decoration: none;
@@ -231,14 +234,14 @@
           &::after {
             content: "";
             position: absolute;
-            width: 10px;
-            height: 10px;
-            top: 50%;
+            width: 6px;
+            height: 6px;
+            top: 30%;
             right: 1.5rem;
             border-radius: 50%;
             background-color: #000;
-            -webkit-transform: translate3d(6.4rem, 0, 0) scale(0.2);
-            transform: translate3d(6.4rem, 0, 0) scale(0.2);
+            -webkit-transform: translate3d(4.4rem, 0, 0) scale(0.2);
+            transform: translate3d(4.4rem, 0, 0) scale(0.2);
             will-change: transform;
             -webkit-transition: -webkit-transform 0.7s
               cubic-bezier(0.645, 0.045, 0.355, 1);

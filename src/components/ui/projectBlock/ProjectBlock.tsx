@@ -41,7 +41,7 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
       gsap.from(projectRef.current, {
         opacity: 0,
         duration: 2,
-        delay: index ? index * 0.2 : 0,
+        delay: index ? index * 0.15 : 0,
         y: "100%",
         scrollTrigger: {
           trigger: projectRef.current,
@@ -50,16 +50,8 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
             gsap.to(projectRef.current, {
               opacity: 1,
               duration: 2,
-              delay: index ? index * 0.2 : 0,
+              delay: index ? index * 0.15 : 0,
               y: 0,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(projectRef.current, {
-              opacity: 0,
-              duration: 3,
-              delay: index ? index * 0.2 : 0,
-              y: "100%",
             });
           },
         },

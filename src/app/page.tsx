@@ -3,9 +3,9 @@ import { Metadata } from "next";
 
 async function fetchData() {
   const res = await fetch(
-    "https://rcw108.com/wp-json/wp/v2/pages/2?acf_format=standard",
+    "https://rcw108.com/dev/wp-json/wp/v2/pages/2?acf_format=standard",
     {
-      next: { revalidate: 3600 },
+      cache: "force-cache",
     }
   );
 
@@ -22,7 +22,7 @@ export async function generateMetadata({
   params: { id: string };
 }): Promise<Metadata> {
   const product = await fetch(
-    `https://rcw108.com/wp-json/wp/v2/pages/2?acf_format=standard`
+    `https://rcw108.com/dev/wp-json/wp/v2/pages/2?acf_format=standard`
   ).then((res) => res.json());
   const meta = await product;
 
@@ -35,7 +35,7 @@ export async function generateMetadata({
       title: meta?.yoast_head_json?.title || "RCW108",
       description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
       openGraph: {
-        images: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+        images: "https://rcw108.com/dev/wp-content/uploads/2022/04/cropped-Group-46-1.png",
         // title:
         //   meta?.yoast_head_json?.og_title || meta.title.rendered || "RCW108",
         // description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
@@ -75,14 +75,14 @@ export async function generateMetadata({
       // },
 
       icons: {
-        icon: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+        icon: "https://rcw108.com/dev/wp-content/uploads/2022/04/cropped-Group-46-1.png",
         shortcut:
-          "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+          "https://rcw108.com/dev/wp-content/uploads/2022/04/cropped-Group-46-1.png",
         apple:
-          "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+          "https://rcw108.com/dev/wp-content/uploads/2022/04/cropped-Group-46-1.png",
         other: {
           rel: "apple-touch-icon-precomposed",
-          url: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+          url: "https://rcw108.com/dev/wp-content/uploads/2022/04/cropped-Group-46-1.png",
         },
       },
     };

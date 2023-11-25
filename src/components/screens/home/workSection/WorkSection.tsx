@@ -33,22 +33,15 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
       gsap.from(titleRef.current, {
         opacity: 0,
         duration: 2,
-        x: "-100%",
+        y: 450,
         scrollTrigger: {
-          trigger: worksRef.current,
-          start: "top 80%",
+          trigger: titleRef.current,
+          start: "top",
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,
               duration: 2,
-              x: 0,
-            });
-          },
-          onLeaveBack: () => {
-            gsap.to(titleRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "-100%",
+              y: 0,
             });
           },
         },
@@ -59,22 +52,33 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
       gsap.from(descrRef.current, {
         opacity: 0,
         duration: 2,
-        x: "100%",
+        y: 450,
         scrollTrigger: {
-          trigger: worksRef.current,
-          start: "top 80%",
+          trigger: descrRef.current,
+          start: "top",
           onEnter: () => {
             gsap.to(descrRef.current, {
               opacity: 1,
               duration: 2,
-              x: 0,
+              y: 0,
             });
           },
-          onLeaveBack: () => {
-            gsap.to(descrRef.current, {
-              opacity: 0,
-              duration: 3,
-              x: "100%",
+        },
+      });
+    }
+    if (workRef.current) {
+      gsap.from(workRef.current, {
+        opacity: 0,
+        duration: 2,
+        y: 450,
+        scrollTrigger: {
+          trigger: workRef.current,
+          start: "top",
+          onEnter: () => {
+            gsap.to(workRef.current, {
+              opacity: 1,
+              duration: 2,
+              y: 0,
             });
           },
         },
@@ -119,21 +123,6 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
       <div className={styles.btns}>
         <div className={styles.button}>
           {btnText.replace(/<br\s*\/?>/g, "")}{" "}
-          <svg
-            version="1.1"
-            className={styles.circleSvg1}
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            viewBox="0 0 149.955 149.955"
-            xmlSpace="preserve"
-          >
-            <path
-              d="M149.945,98.318l-0.906-93.803c-0.022-2.072-1.7-3.75-3.772-3.765L51.634,0l-0.06,7.603l84.735,0.679
-        L0.011,144.579l5.376,5.376L141.525,13.817l0.816,84.575L149.945,98.318z"
-            ></path>
-          </svg>
         </div>
       </div>
     </section>

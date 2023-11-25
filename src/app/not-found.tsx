@@ -1,8 +1,8 @@
 import ErrorPage from "@/components/screens/404/ErrorPage";
 
 async function fetchData() {
-  const res = await fetch("https://rcw108.com/wp-json/wp/v2/options", {
-    next: { revalidate: 36000 },
+  const res = await fetch("https://dev.rcw108.com/wp-json/wp/v2/options", {
+    cache: "force-cache",
   });
 
   if (!res.ok) {
