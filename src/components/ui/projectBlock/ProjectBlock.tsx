@@ -40,17 +40,17 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
     if (projectRef.current) {
       gsap.from(projectRef.current, {
         opacity: 0,
-        duration: 2,
-        delay: index ? index * 0.15 : 0,
-        y: "100%",
+        duration: 1.5,
+        delay: index ? index * 0.1 : 0,
+        y: 250,
         scrollTrigger: {
           trigger: projectRef.current,
-          start: "top 1600", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(projectRef.current, {
               opacity: 1,
-              duration: 2,
-              delay: index ? index * 0.15 : 0,
+              duration: 1.5,
+              delay: index ? index * 0.1 : 0,
               y: 0,
             });
           },
@@ -68,8 +68,7 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
             alt={title}
             height={"455"}
             width={430}
-            priority
-            loading="eager"
+            loading="lazy"
             style={{maxWidth: "100%", height: "100%"}}
           />
         </div>

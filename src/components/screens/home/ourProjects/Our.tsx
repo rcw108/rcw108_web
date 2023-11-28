@@ -45,16 +45,20 @@ const OurProjects: FC<OurProjectsProps> = ({
     if (titleRef.current) {
       gsap.from(titleRef.current, {
         opacity: 0,
-        y: 450,
-        duration: 2,
+        x: -15,
+        y: 30,
+        transformOrigin: "bottom left",
+        duration: 1,
         scrollTrigger: {
           trigger: projectRef.current,
           start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,
+              duration: 1,
+              x: 0,
               y: 0,
-              duration: 2,
+              scale: 1,
             });
           },
         },
@@ -64,16 +68,38 @@ const OurProjects: FC<OurProjectsProps> = ({
     if (descriptionRef.current) {
       gsap.from(descriptionRef.current, {
         opacity: 0,
-        y: 450,
-        duration: 2,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: projectRef.current,
-          start: "top 75%", // Adjust as needed
+          start: "top 70%", // Adjust as needed
           onEnter: () => {
             gsap.to(descriptionRef.current, {
               opacity: 1,
-              y: 0,
-              duration: 2,
+              duration: 1,
+              x: 0,
+              y: 0, 
+              scale: 1, 
+            });
+          },
+        },
+      });
+    }
+    if (servicesRef.current) {
+      gsap.from(servicesRef.current, {
+        opacity: 0,
+        x: -100,
+        duration: 1,
+        scrollTrigger: {
+          trigger: projectRef.current,
+          start: "top 65%", // Adjust as needed
+          onEnter: () => {
+            gsap.to(servicesRef.current, {
+              opacity: 1,
+              x: 0,
+              duration: 1,
             });
           },
         },
@@ -89,11 +115,17 @@ const OurProjects: FC<OurProjectsProps> = ({
       <p className={styles.descr} ref={descriptionRef}>
         {description}
       </p>
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} ref={servicesRef}>
         {services &&
           services.map(
             (item: { title: string; img: string }, index: number) => (
-              <ServicesBlock key={index} title={item.title} img={item.img} index={index} servicesRef={servicesRef}/>
+              <ServicesBlock
+                key={index}
+                title={item.title}
+                img={item.img}
+                index={index}
+                servicesRef={servicesRef}
+              />
             )
           )}
       </div>

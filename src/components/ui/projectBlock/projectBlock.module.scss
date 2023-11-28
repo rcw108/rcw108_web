@@ -75,18 +75,19 @@
     border-top: 2px solid transparent;
     height: auto;
     .title {
-      font-size: 35px;
+      font-size: 30px;
       line-height: 1.2em;
-      font-weight: 700;
+      font-weight: 600;
       color: $mainTextColor;
       text-transform: capitalize !important;
+      margin: 0;
     }
     .descr {
       color: $mainTextColor;
       font-weight: 400;
       font-size: 18px;
       line-height: 30px;
-      margin: 10px 0 20px 0;
+      margin: 15px 0 ;
     }
     .btns {
       display: flex;
@@ -106,6 +107,7 @@
         font-size: 18px;
         line-height: 23px;
         text-transform: uppercase;
+        font-family: var(--font-space);
         white-space: nowrap;
         width: 200px;
         height: 50px;
@@ -122,6 +124,8 @@
         transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1),
           -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
         .detailText {
+          font-family: var(--font-space);
+          font-weight: 500;
           display: inline-block;
           will-change: transform;
           -webkit-transform: translateX(-5px);
@@ -163,6 +167,7 @@
         }
       }
       .web {
+        font-family: var(--font-space);
         transition: all .5s ease;
         display: -webkit-inline-box;
         display: -ms-inline-flexbox;
@@ -216,6 +221,7 @@
           transform: translateX(-5px);
         }
         .webText {
+          font-family: var(--font-space);
           transition: all .5s ease;
           font-weight: 500;
           font-size: 18px;
@@ -265,15 +271,11 @@
   .project {
     .content {
       position: relative;
-      min-height: 350px;
-      .title {
-        margin-bottom: 30px;
+      min-height: 220px;
+      .descr {
+        margin-bottom: 25px;
       }
-      .btns {
-        position: absolute;
-        content: "";
-        bottom: 50px;
-      }
+
     }
   }
 }
@@ -285,15 +287,7 @@
   .project {
     .content {
       position: relative;
-      min-height: 350px;
-      .title {
-        margin-bottom: 15px;
-      }
-      .btns {
-        position: absolute;
-        content: "";
-        bottom: 50px;
-      }
+      min-height: 220px;
     }
   }
 }
@@ -312,7 +306,7 @@
       }
     }
     .content {
-      min-height: 280px;
+      min-height: 220px;
       padding: 25px 40px;
     }
   }
@@ -328,7 +322,7 @@
     }
     .content {
       padding: 25px 10px;
-      min-height: 240px;
+      min-height: 220px;
       .title {
         font-size: 22px;
       }

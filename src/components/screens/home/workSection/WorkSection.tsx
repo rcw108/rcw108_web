@@ -32,16 +32,20 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
     if (titleRef.current) {
       gsap.from(titleRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30,
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: titleRef.current,
-          start: "top 1500",
+          start: "bottom -1100",
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           },
         },
@@ -51,16 +55,20 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
     if (descrRef.current) {
       gsap.from(descrRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30,
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: descrRef.current,
-          start: "top 1500",
+          start: "bottom -1100",
           onEnter: () => {
             gsap.to(descrRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           },
         },
@@ -69,16 +77,20 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
     if (workRef.current) {
       gsap.from(workRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30,
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: workRef.current,
-          start: "top 1500",
+          start: "bottom -1100",
           onEnter: () => {
             gsap.to(workRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           },
         },
@@ -122,7 +134,7 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
       </div>
       <div className={styles.btns}>
         <div className={styles.button}>
-          {btnText.replace(/<br\s*\/?>/g, "")}{" "}
+          <span>{btnText.replace(/<br\s*\/?>/g, "")}{" "}</span>
         </div>
       </div>
     </section>

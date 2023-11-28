@@ -26,10 +26,10 @@ const ContactUs: FC<PropsWithChildren<IContacts>> = ({ title, acf }) => {
           <h4>{secondPart.replace(/<\/?br>/g, "")}</h4>
         </div>
         <div className={styles.wrapper}>
-            <div className={styles.contacts}>
+            {/* <div className={styles.contacts}>
                 <h4>{acf.conect_cont[0].title}</h4>
                 <Link href={acf.conect_cont[0].link}>{acf.conect_cont[0].contact}</Link>
-            </div>
+            </div> */}
           <Form />
         </div>
       </div>

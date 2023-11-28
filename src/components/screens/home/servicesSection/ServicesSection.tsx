@@ -50,16 +50,20 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
     if (titleRef.current) {
       gsap.from(titleRef.current, {
         opacity: 0,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
         duration: 1,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%", // Adjust as needed
+          start: "top 75%",
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,
-              duration: 2,
-              y: 0,
+              duration: 1,
+              x: 0,
+              y: 0, 
+              scale: 1, 
             });
           },
         },
@@ -68,16 +72,20 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
     if (secondTitleRef.current) {
       gsap.from(secondTitleRef.current, {
         opacity: 0,
-        duration: 1.5,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%", // Adjust as needed
+          start: "top 70%",
           onEnter: () => {
             gsap.to(secondTitleRef.current, {
               opacity: 1,
+              duration: 1,
+              x: 0,
               y: 0,
-              duration: 1.5,
+              scale: 1, 
             });
           },
         },
@@ -86,16 +94,20 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
     if (subTitleRef.current) {
       gsap.from(subTitleRef.current, {
         opacity: 0,
-        duration: 1.5,
-        y: 150,
+        x: -15,
+        y: 30,
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 50%", // Adjust as needed
+          start: "top 65%",
           onEnter: () => {
             gsap.to(subTitleRef.current, {
               opacity: 1,
+              duration: 1,
+              x: 0,
               y: 0,
-              duration: 1.5,
+              scale: 1, 
             });
           },
         },
@@ -104,14 +116,14 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
     if (imagesRef.current) {
       gsap.from(imagesRef.current, {
         opacity: 0,
-        duration: 2,
+        duration: 1,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 30%", // Adjust as needed
           onEnter: () => {
             gsap.to(imagesRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
             });
           },
         },
@@ -160,7 +172,7 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
         </div>
         <div className={styles.btns}>
           <div className={styles.btn}>
-            <Link href={btnLink}>{btnText}</Link>
+            <Link href={btnLink}><span>{btnText}</span></Link>
           </div>
         </div>
       </section>

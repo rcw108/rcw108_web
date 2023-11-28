@@ -4,9 +4,9 @@ import { Metadata } from "next";
 async function fetchData() {
   const res = await fetch(
     `https://rcw108.com/dev/wp-json/wp/v2/projects?acf_format=standard`,
-    {
-      cache: "force-cache",
-    }
+    { next: { revalidate: 3600 }, cache: "force-cache", headers: {
+      'Cache-Control': 'public, max-age=31536000',
+    }, }
   );
 
   if (!res.ok) {

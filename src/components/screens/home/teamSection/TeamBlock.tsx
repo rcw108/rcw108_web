@@ -47,7 +47,7 @@ const TeamBlock: FC<PropsWithChildren<IteamBlock>> = ({ item, index }) => {
     <>
       <div className={styles.teamBlock} ref={teamRef}>
         <div className={styles.img} ref={triggerRef}>
-          <Image src={item.img} alt={item.name} width={"400"} height={"390"} />
+          <Image src={item.img} alt={item.name} width={"400"} height={"390"} loading="lazy" />
         </div>
         <div className={styles.info}>
           <h3 className={styles.name}>{item.name}</h3>

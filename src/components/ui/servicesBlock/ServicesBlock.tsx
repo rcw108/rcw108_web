@@ -25,33 +25,33 @@ const ServicesBlock: FC<PropsWithChildren<IServicesBlock>> = ({
 }) => {
   const serviceRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (serviceRef.current) {
-      gsap.from(serviceRef.current, {
-        opacity: 0,
-        duration: 2,
-        x: -(50 * index),
-        delay: index * 0.1,
-        scrollTrigger: {
-          trigger: serviceRef.current,
-          start: "top 70%", // Adjust as needed
-          onEnter: () => {
-            gsap.to(serviceRef.current, {
-              opacity: 1,
-              duration: 2,
-              x: 0,
-              delay: index * 0.1,
-            });
-          },
-        },
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (serviceRef.current) {
+  //     gsap.from(serviceRef.current, {
+  //       opacity: 0,
+  //       duration: 2,
+  //       x: -(50 * index),
+  //       delay: index * 0.1,
+  //       scrollTrigger: {
+  //         trigger: serviceRef.current,
+  //         start: "top 70%", // Adjust as needed
+  //         onEnter: () => {
+  //           gsap.to(serviceRef.current, {
+  //             opacity: 1,
+  //             duration: 2,
+  //             x: 0,
+  //             delay: index * 0.1,
+  //           });
+  //         },
+  //       },
+  //     });
+  //   }
+  // }, []);
 
   return (
     <div className={styles.services} ref={serviceRef}>
       <div className={styles.img} >
-        <Image src={img} alt={title} width={"60"} height={"60"} style={{maxWidth: "100%", height: "100%"}}/>
+        <Image src={img} alt={title} width={"60"} height={"60"} loading="lazy" style={{maxWidth: "100%", height: "100%"}}/>
       </div>
       <h3 className={styles.title}>{title}</h3>
     </div>

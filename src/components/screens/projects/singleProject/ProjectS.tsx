@@ -39,22 +39,28 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
   const manageRef = useRef<HTMLDivElement>(null);
   const manageTitleRef = useRef<HTMLDivElement>(null);
   const manageDescrRef = useRef<HTMLDivElement>(null);
+  const testBlocksRef = useRef<HTMLDivElement>(null);
+  const projBlocksRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // title
     if (titleRef.current) {
       gsap.from(titleRef.current, {
         opacity: 0,
-        duration: 2,
-        scale: 0.5,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: titleRef.current,
           start: "top 100%", // Adjust as needed
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,
-              duration: 2,
-              scale: 1,
+              duration: 1,
+              x: 0,
+              y: 0,
+              scale: 1, 
             });
           },
         },
@@ -63,16 +69,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (taskTitleRef.current) {
       gsap.from(taskTitleRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: taskTitleRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(taskTitleRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           },
         },
@@ -81,16 +91,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (devTitleRef.current) {
       gsap.from(devTitleRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: devTitleRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(devTitleRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           },
         },
@@ -99,16 +113,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (testingTitleRef.current) {
       gsap.from(testingTitleRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: testingTitleRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(testingTitleRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           },
         },
@@ -117,16 +135,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (respTitleRef.current) {
       gsap.from(respTitleRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: respTitleRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(respTitleRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           },
         },
@@ -135,16 +157,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (supTitleRef.current) {
       gsap.from(supTitleRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: supTitleRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(supTitleRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           }
         },
@@ -153,16 +179,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (manageTitleRef.current) {
       gsap.from(manageTitleRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: manageTitleRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(manageTitleRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           },
         },
@@ -172,16 +202,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (taskDescrRef.current) {
       gsap.from(taskDescrRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: taskDescrRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 100%", // Adjust as needed
           onEnter: () => {
             gsap.to(taskDescrRef.current, {
               opacity: 1,
-              duration: 2,
-              y:0,
+              duration: 1,
+              x: 0,
+              y: 0,
+              scale: 1, 
             });
           },
         },
@@ -208,16 +242,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (testingDescrRef.current) {
       gsap.from(testingDescrRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: testingDescrRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(testingDescrRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1,
             });
           },
         },
@@ -226,16 +264,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (respDescrRef.current) {
       gsap.from(respDescrRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: respDescrRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(respDescrRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1,
             });
           },
         },
@@ -244,16 +286,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (supDescrRef.current) {
       gsap.from(supDescrRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: supDescrRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "top 90%", // Adjust as needed
           onEnter: () => {
             gsap.to(supDescrRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1,
             });
           },
         },
@@ -262,16 +308,20 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if (manageDescrRef.current) {
       gsap.from(manageDescrRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: manageDescrRef.current,
           start: "top 1500", // Adjust as needed
           onEnter: () => {
             gsap.to(manageDescrRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1,
             });
           },
         },
@@ -375,7 +425,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
     if(respImgRef.current) {
       gsap.from(respImgRef.current, {
         opacity: 0,
-        duration: 2,
+        duration: 1,
         y: "100%",
         scrollTrigger: {
           trigger: respImgRef.current,
@@ -383,8 +433,53 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
           onEnter: () => {
             gsap.to(respImgRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
               y: "0%",
+            });
+          },
+        },
+      });
+    }
+
+    if(testBlocksRef.current) {
+      gsap.from(testBlocksRef.current, {
+        opacity: 0,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
+        scrollTrigger: {
+          trigger: testBlocksRef.current,
+          start: "top 90%", // Adjust as needed
+          onEnter: () => {
+            gsap.to(testBlocksRef.current, {
+              opacity: 1,
+              duration: 1,
+              x: 0,
+              y: 0,
+              scale: 1, 
+            });
+          },
+        },
+      });
+    }
+    if(projBlocksRef.current) {
+      gsap.from(projBlocksRef.current, {
+        opacity: 0,
+        x: -15,
+        y: 30, 
+        transformOrigin: "bottom left", 
+        duration: 1,
+        scrollTrigger: {
+          trigger: projBlocksRef.current,
+          start: "top 85%", // Adjust as needed
+          onEnter: () => {
+            gsap.to(projBlocksRef.current, {
+              opacity: 1,
+              duration: 1,
+              x: 0,
+              y: 0,
+              scale: 1, 
             });
           },
         },
@@ -536,7 +631,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                 <p className={styles.testingDescr} ref={testingDescrRef}>
                   {project.acf?.description_ts}
                 </p>
-                <div className={styles.testingWrap}>
+                <div className={styles.testingWrap} ref={testBlocksRef}>
                   {project.acf.tools
                     ? project.acf.tools.map((item, index) => {
                         const h4ContentRegex = /<h4>(.*?)<\/h4>/;
@@ -642,8 +737,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       );
                     })}
                   </div>
-                  <div className={styles.topTextBlock}>
-                    <div className={styles.topTestWrapLast}>
+                  <div className={styles.topTextBlock} ref={projBlocksRef}>
+                    <div className={styles.topTestWrapLast} >
                       <h4 className={styles.topTitle} ref={manageTitleRef}>
                         {project.acf?.title_mn}
                       </h4>

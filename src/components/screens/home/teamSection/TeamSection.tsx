@@ -40,16 +40,20 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
     if (titleRef.current) {
       gsap.from(titleRef.current, {
         opacity: 0,
-        duration: 2,
-        y: 450,
+        x: -15,
+        y: 30,
+        transformOrigin: "bottom left", 
+        duration: 1,
         scrollTrigger: {
           trigger: titleRef.current,
-          start: "top 1500", // Adjust as needed
+          start: "center 70%", // Adjust as needed
           onEnter: () => {
             gsap.to(titleRef.current, {
               opacity: 1,
-              duration: 2,
+              duration: 1,
+              x: 0,
               y: 0,
+              scale: 1, 
             });
           },
         },
@@ -85,7 +89,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
                         alt={item.name}
                         width={"400"}
                         height={"390"}
-                        priority
+                        loading="lazy"
                         style={{ maxWidth: "100%", height: "100%" }}
                       />
                     </div>

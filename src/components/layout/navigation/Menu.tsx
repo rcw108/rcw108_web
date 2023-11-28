@@ -49,27 +49,16 @@ const Menu: FC<PropsWithChildren<any>> = ({ menu }) => {
                   },
                   index: Key | null | undefined
                 ) => {
-                  let pathName = "";
-
-                  if (item.url.endsWith(".com/")) {
-                    pathName = "/";
-                  } else if (item.url.includes(".com")) {
-                    pathName = item.url
-                      .replace("http://", "")
-                      .substr(item.url.indexOf(".com") + 8);
-                    if (pathName.endsWith("/")) {
-                      pathName = pathName.slice(0, -1);
-                    }
-                  } else {
-                    pathName = item.url.replace("http://", "");
-                  }
-                  console.log(pathName);
+                  const pathName = item.url.startsWith("/")
+                    ? item.url
+                    : `/${item.url.replace("http://", "")}`;
+                  console.log(`${pathname}`);
 
                   return (
                     <li key={index} className={`${styles.menuItem}`}>
                       <Link
                         className={
-                          pathName === pathname ? styles.activeMenu : ""
+                          pathName === pathname || pathname === `${pathName}/70` || pathname === `${pathName}/76` || pathname === `${pathName}/283` || pathname === `${pathName}/338` ? styles.activeMenu : ""
                         }
                         onClick={() => setOpenMenu(false)}
                         href={pathName}

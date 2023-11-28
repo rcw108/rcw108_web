@@ -9,7 +9,7 @@
     opacity: 0;
     display: block;
     max-width: 1100px;
-    font-weight: 700;
+    font-weight: 600;
     color: $mainTextColor;
     font-size: 65px;
     line-height: 70px;
@@ -22,9 +22,10 @@
     text-align: center;
     font-size: 25px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 30px;
     text-transform: uppercase;
+    font-family: var(--font-space);
     margin-bottom: 30px;
   }
   .subTitle {
@@ -54,7 +55,7 @@
         margin-bottom: 40px;
         font-size: 25px;
         line-height: 30px;
-        font-weight: 700;
+        font-weight: 600;
         color: $mainTextColor;
       }
 

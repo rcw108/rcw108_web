@@ -1,14 +1,14 @@
 @import "@/assets/styles/variables.scss";
 
 .team {
-  padding-top: 100px;
+  padding-top: 60px;
   padding-bottom: 70px;
   .title {
     text-align: center;
     font-size: 40px;
     line-height: 1.3em;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 600;
     color: $mainTextColor;
   }
   .wrapper {
@@ -18,7 +18,7 @@
   }
   .teamBlockWrap {
     width: 33%;
-    padding: 40px;
+    padding: 20px;
     min-height: 546px;
   }
   .teamBlock {
@@ -31,7 +31,7 @@
   }
   .img {
     background-color: #EAEBEE;
-    height: 390px;
+    height: 310px;
     border-bottom: 2px solid $activeTextColor;
     img {
       object-fit: cover;
@@ -47,12 +47,13 @@
       margin-bottom: 10px;
       font-size: 25px;
       line-height: 35px;
-      font-weight: 700;
+      font-weight: 600;
       color: $mainTextColor;
     }
     .position {
       font-size: 18px;
       color: $activeTextColor;
+      font-weight: 300;
       line-height: 25px;
     }
   }
@@ -132,29 +133,6 @@
   }
   .sliderWrapper {
     display: none;
-  }
-}
-
-@media (max-width: 1440px) {
-  .team {
-    .title {
-      font-size: 35px;
-      line-height: 1.2em;
-      margin-bottom: 15px;
-    }
-    .wrapper {
-      .teamBlockWrap {
-        padding: 15px;
-        .teamBlock {
-          .img {
-            height: 320px;
-            img {
-              height: 320px;
-            }
-          }
-        }
-      }
-    }
   }
 }
 

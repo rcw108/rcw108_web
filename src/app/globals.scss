@@ -10,7 +10,8 @@
 }
 
 body {
-  font-family: var(--font-space);
+  font-family: var(--font-space), sans-serif;
+  font-display: swap;
   background-color: #F6F5F9;
 }
 
@@ -21,7 +22,8 @@ h4,
 h5,
 h6,
 a {
-  font-family: var(--font-mont)
+  font-family: var(--font-mont), sans-serif;
+  font-display: swap;
 }
 
 .container {
@@ -154,6 +156,7 @@ a {
   }
   .slick-list {
     overflow: hidden !important;
+    position: relative;
   }
 }
 
@@ -161,6 +164,9 @@ a {
   display: flex !important;
   align-items: center;
   height: 20px;
+  position: absolute;
+  content: "";
+  bottom: 20px;
   margin-left: 40px;
 
   .slick-active {
