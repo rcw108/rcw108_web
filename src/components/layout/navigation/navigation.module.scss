@@ -47,7 +47,8 @@
     }
     a.activeMenu[href="/"],
     a.activeMenu[href="/projects"],
-    a.activeMenu[href="/contact-us"] {
+    a.activeMenu[href="/contact-us"],
+    a.activeMenu[href="/blog"] {
       color: #ff3928 !important;
       &::after {
         opacity: 1 !important;

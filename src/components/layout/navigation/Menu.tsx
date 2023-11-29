@@ -52,13 +52,13 @@ const Menu: FC<PropsWithChildren<any>> = ({ menu }) => {
                   const pathName = item.url.startsWith("/")
                     ? item.url
                     : `/${item.url.replace("http://", "")}`;
-                  console.log(`${pathname}`);
 
+                    console.log(pathName, pathname)
                   return (
                     <li key={index} className={`${styles.menuItem}`}>
                       <Link
                         className={
-                          pathName === pathname || pathname === `${pathName}/70` || pathname === `${pathName}/76` || pathname === `${pathName}/283` || pathname === `${pathName}/338` ? styles.activeMenu : ""
+                          pathName == pathname || pathname == `${pathName}/70` || pathname == `${pathName}/76` || pathname == `${pathName}/283` || pathname == `${pathName}/338` || pathname == `${pathName}/453` ? styles.activeMenu : ""
                         }
                         onClick={() => setOpenMenu(false)}
                         href={pathName}

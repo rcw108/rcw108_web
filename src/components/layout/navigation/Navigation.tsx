@@ -2,7 +2,7 @@ import Menu from "./Menu";
 
 async function fetchData() {
   const res = await fetch("https://rcw108.com/dev/wp-json/wp/v2/menus", {
-    next: { revalidate: 3600 },
+    next: { revalidate: 10 },
   });
 
   if (!res.ok) {
@@ -14,7 +14,6 @@ async function fetchData() {
 
 export default async function Navigation() {
   const menu = await fetchData();
-
 
   return (
     <>

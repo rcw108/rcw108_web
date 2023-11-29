@@ -27,7 +27,7 @@ const Footer: FC = () => {
         duration: 1.2,
         scrollTrigger: {
           trigger: footerRef.current,
-          start: "top 95%",
+          start: "top 100%",
           onEnter: () => {
             gsap.to(footerRef.current, {
               opacity: 1,

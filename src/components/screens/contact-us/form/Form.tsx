@@ -19,6 +19,7 @@ interface IResp {
 
 const Form: FC = () => {
   const [response, setResponse] = useState<IResp>({ message: "" });
+  const [sendError, setSendError] = useState(false);
 
   const schema = yup
     .object({
@@ -38,13 +39,17 @@ const Form: FC = () => {
   const onSubmit: SubmitHandler<IForm> = async (data) => {
     const jsonData = JSON.stringify(data);
 
-    const res = await fetch("https://rcw108.com/wp-json/wp/v2/contact-form", {
-      method: "POST",
-      body: jsonData,
-      headers: { "Content-Type": "application/json" },
-    });
+    const res = await fetch(
+      "https://rcw108.com/dev/wp-json/wp/v2/contact-form",
+      {
+        method: "POST",
+        body: jsonData,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
 
     if (!res.ok) {
+      setSendError(true);
       throw new Error("Failed to fetch data");
     }
 
@@ -57,10 +62,15 @@ const Form: FC = () => {
     <section className={styles.form}>
       {response.message.length ? (
         <div>
-          <div>Success</div>
-          <div onClick={() => setResponse({ message: "" })}>
-            Send another message
+          <div className={styles.resp}>Success</div>
+          <div onClick={() => setResponse({ message: "" })} className={styles.respBtn}>
+            <span>Send another message</span>
           </div>
+        </div>
+      ) : sendError ? (
+        <div>
+          <div className={styles.resp}>Error</div>
+          <div onClick={() => setSendError(false)} className={styles.respBtn}><span>Try again</span></div>
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
