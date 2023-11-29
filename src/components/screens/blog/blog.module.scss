@@ -1,4 +1,5 @@
 .postWrapper {
+  padding: 140px 0 60px 0;
   .wrap {
     padding: 10px 40px;
     display: grid;
@@ -6,5 +7,27 @@
     grid-template-rows: minmax(350px, auto);
     grid-auto-rows: minmax(350px, auto);
     gap: 30px;
+  }
+  .slider {
+    display: none;
+  }
+}
+
+@media (max-width: 1140px) {
+  .postWrapper {
+    .wrap {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .postWrapper {
+    .wrap {
+      display: none;
+    }
+    .slider {
+      display: block;
+    }
   }
 }

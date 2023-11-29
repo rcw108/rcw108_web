@@ -37,6 +37,7 @@ interface Meta {
   header_main_stick_meta: string;
   header_below_stick_meta: string;
   footnotes: string;
+  likes_count: number;
 }
 
 interface Category {

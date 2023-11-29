@@ -525,7 +525,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                     alt={project.title.rendered}
                     width={261}
                     height={57}
-                    loading="eager"
+                    loading="lazy"
+                    
                   />
                 </div>
                 <div className={styles.hourWrap} ref={hourRef}>
@@ -560,7 +561,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       priority
                       height={57}
                       layout="responsive"
-                      loading="eager"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -580,7 +581,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       width={300}
                       height={200}
                       layout="responsive"
-                      loading="eager"
+                      loading="lazy"
                     />
                   </div>
                   <div className={styles.devDescr} ref={devTextRef}>
@@ -614,7 +615,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                             alt={item.alt}
                             width={300}
                             height={250}
-                            loading="eager"
+                            loading="lazy"
                           />
                         </div>
                       );
@@ -711,7 +712,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       width={261}
                       height={57}
                       layout="responsive"
-                      loading="eager"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -733,6 +734,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                           width={420}
                           height={57}
                           layout="responsive"
+                          loading="lazy"
                         />
                       );
                     })}

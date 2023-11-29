@@ -1,0 +1,111 @@
+@import '../../../../assets/styles/variables.scss';
+
+.singlePost {
+  padding: 140px 0 0 0px;
+  max-width: 920px;
+  margin: 0 auto;
+  height: 100%;
+  .title {
+    font-size: 40px;
+    text-align: center;
+  }
+  .image {
+    margin-top: 10px;
+    img {
+      object-fit: cover;
+    }
+  }
+  .wrap {
+    margin-top: 30px;
+    width: 100%;
+    border-top: 1px solid $activeTextColor;
+    border-bottom: 1px solid $activeTextColor;
+    height: 40px;
+    padding: 10px;
+  }
+  .likes {
+    display: flex;
+    width: 40px;
+    height: 20px;
+    justify-content: space-between;
+    align-items: center;
+    .heart {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      &:hover {
+        svg {
+          path,line,g,d {
+            transition: all .3s ease;
+            fill: red
+          }
+        }
+      }
+    }
+    .active {
+      animation: heart .5s ease-in-out;
+      svg {
+        path,line,g {
+          fill: red;
+        }
+      }
+    }
+  }
+  .text {
+    margin-top: 40px;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 25px;
+  }
+  h2 {
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 991px) {
+  .singlePost {
+    max-width: 100%;
+    .image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .singlePost {
+    max-width: 100%;
+    .image {
+      img {
+        height: 300px;
+      }
+    }
+    .title {
+      font-size: 30px;
+    }
+    h2 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}

@@ -6,6 +6,12 @@ import styles from "./blogItem.module.scss";
 import { Post } from "@/interfaces/blog.interface";
 
 const BlogItem: FC<PropsWithChildren<Post | any>> = ({ post }) => {
+
+  const originalString = post?.excerpt?.rendered.replace(/<\/?p>/g, "").replace(/<\/?span>/g, "").replace(/<\/?a>/g, "").replace(/&raquo;/g, "").replace(/&hellip;/g, "").replace(/<p class="read-more"> <a class="" href="https:\/\/rcw108\.com\/dev\/superfast-wordpress-website-with-next-js\/"> <span class="screen-reader-text">/g, "");
+
+  const descrString = originalString.length > 150 ? `${originalString.slice(0, 150)}...` : originalString
+
+
   return (
     <>
       {post && (
@@ -23,11 +29,11 @@ const BlogItem: FC<PropsWithChildren<Post | any>> = ({ post }) => {
           <div className={styles.content}>
             <h3 className={styles.title}>{post?.title?.rendered}</h3>
             <p className={styles.descr}>
-              {post?.excerpt?.rendered.replace(/<\/?p>/g, "")}
+              {descrString}
             </p>
-            <div className={styles.btn}>
-              <Link className={styles.link} href={`/blog/${post.id}`}>
-                Read more
+            <div className={styles.btns}>
+              <Link className={styles.btn} href={`/blog/${post.id}`}>
+                <span>Read more</span>
               </Link>
             </div>
           </div>
