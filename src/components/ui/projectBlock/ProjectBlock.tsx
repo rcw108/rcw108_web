@@ -73,7 +73,7 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
           />
         </div>
         <div className={styles.content}>
-          <h3 className={styles.title}>{title}</h3>
+          <h3 className={styles.title}>{title.replace(/&#8211;/g, "-")}</h3>
           <div className={styles.descr}>
             {description.replace(/<\/?p>/g, "")}
           </div>
@@ -84,7 +84,7 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
               </Link>
             </div>
             <div className={styles.web}>
-              <a href={web} className={styles.webText}>
+              <a href={web} target="_blank" className={styles.webText}>
                 Visit Website
               </a>
             </div>

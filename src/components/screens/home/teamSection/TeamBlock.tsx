@@ -20,28 +20,26 @@ const TeamBlock: FC<PropsWithChildren<IteamBlock>> = ({ item, index }) => {
   const teamRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (teamRef.current) {
-      gsap.from(teamRef.current, {
-        opacity: 0,
-        x: "-100%",
-        duration: 1,
-        delay: index * 0.2,
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top 50%",
-          onEnter: () => {
-            gsap.to(teamRef.current, {
-              opacity: 1,
-              duration: 2,
-              delay: index * 0.2,
-              x: 0,
-            });
-          },
-        },
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (teamRef.current) {
+  //     gsap.from(teamRef.current, {
+  //       opacity: 0,
+  //       x: "-100%",
+  //       duration: 1,
+  //       scrollTrigger: {
+  //         trigger: triggerRef.current,
+  //         start: "top 50%",
+  //         onEnter: () => {
+  //           gsap.to(teamRef.current, {
+  //             opacity: 1,
+  //             duration: 2,
+  //             x: 0,
+  //           });
+  //         },
+  //       },
+  //     });
+  //   }
+  // }, []);
 
   return (
     <>

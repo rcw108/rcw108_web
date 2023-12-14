@@ -32,6 +32,16 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
     slidesToScroll: 1,
   };
 
+  const settingsDescr = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    autoplay: false,
+    speed: 700,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+
   const teamRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const teamBlockRef = useRef<HTMLDivElement>(null);
@@ -42,7 +52,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
         opacity: 0,
         x: -15,
         y: 30,
-        transformOrigin: "bottom left", 
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: titleRef.current,
@@ -53,7 +63,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
@@ -67,14 +77,16 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
         {title}
       </h2>
       <div className={styles.wrapper} ref={teamRef}>
-        {team &&
-          team.map((item, index) => {
-            return (
-              <div key={index} className={styles.teamBlockWrap}>
-                <TeamBlock item={item} index={index} />
-              </div>
-            );
-          })}
+        <Slider {...settingsDescr}>
+          {team &&
+            team.map((item, index) => {
+              return (
+                <div key={index} className={styles.teamBlockWrap}>
+                  <TeamBlock item={item} index={index} />
+                </div>
+              );
+            })}
+        </Slider>
       </div>
       <div className={styles.sliderWrapper}>
         <Slider {...settings}>

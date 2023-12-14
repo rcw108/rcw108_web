@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { ProjectData } from "@/interfaces/project.interface";
 import { FC, PropsWithChildren, useRef, useEffect } from "react";
@@ -18,7 +18,6 @@ interface IProj {
 }
 
 const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
-
   const titleRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
   const hourRef = useRef<HTMLDivElement>(null);
@@ -48,8 +47,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(titleRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: titleRef.current,
@@ -60,7 +59,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
@@ -70,8 +69,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(taskTitleRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: taskTitleRef.current,
@@ -82,7 +81,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
@@ -92,8 +91,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(devTitleRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: devTitleRef.current,
@@ -104,7 +103,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
@@ -114,8 +113,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(testingTitleRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: testingTitleRef.current,
@@ -126,7 +125,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
@@ -136,8 +135,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(respTitleRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: respTitleRef.current,
@@ -148,7 +147,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
@@ -158,8 +157,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(supTitleRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: supTitleRef.current,
@@ -170,9 +169,9 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
-          }
+          },
         },
       });
     }
@@ -180,8 +179,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(manageTitleRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: manageTitleRef.current,
@@ -192,7 +191,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
@@ -203,8 +202,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(taskDescrRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: taskDescrRef.current,
@@ -215,7 +214,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
@@ -243,8 +242,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(testingDescrRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: testingDescrRef.current,
@@ -265,8 +264,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(respDescrRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: respDescrRef.current,
@@ -287,8 +286,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(supDescrRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: supDescrRef.current,
@@ -309,8 +308,8 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       gsap.from(manageDescrRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: manageDescrRef.current,
@@ -328,7 +327,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       });
     }
     // hour
-    if(hourRef.current) {
+    if (hourRef.current) {
       gsap.from(hourRef.current, {
         opacity: 0,
         duration: 2,
@@ -347,7 +346,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       });
     }
     // devImg
-    if(devImgRef.current) {
+    if (devImgRef.current) {
       gsap.from(devImgRef.current, {
         opacity: 0,
         duration: 2,
@@ -366,7 +365,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       });
     }
     //manageRef
-    if(manageRef.current) {
+    if (manageRef.current) {
       gsap.from(manageRef.current, {
         opacity: 0,
         duration: 2,
@@ -385,7 +384,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       });
     }
     //sup
-    if(supImgRef.current) {
+    if (supImgRef.current) {
       gsap.from(supImgRef.current, {
         opacity: 0,
         duration: 2,
@@ -403,7 +402,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
         },
       });
     }
-    if(supTextRef.current) {
+    if (supTextRef.current) {
       gsap.from(supTextRef.current, {
         opacity: 0,
         duration: 2,
@@ -422,7 +421,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       });
     }
     //respImg
-    if(respImgRef.current) {
+    if (respImgRef.current) {
       gsap.from(respImgRef.current, {
         opacity: 0,
         duration: 1,
@@ -441,12 +440,12 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
       });
     }
 
-    if(testBlocksRef.current) {
+    if (testBlocksRef.current) {
       gsap.from(testBlocksRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: testBlocksRef.current,
@@ -457,18 +456,18 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
       });
     }
-    if(projBlocksRef.current) {
+    if (projBlocksRef.current) {
       gsap.from(projBlocksRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: projBlocksRef.current,
@@ -479,15 +478,13 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               duration: 1,
               x: 0,
               y: 0,
-              scale: 1, 
+              scale: 1,
             });
           },
         },
       });
     }
-  }, [])
-
-
+  }, []);
 
   const h4ContentRegex = /<h4>(.*?)<\/h4>/;
   const match = project.acf.description_dv.match(h4ContentRegex);
@@ -518,7 +515,9 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
           {project && (
             <div className={styles.headSection}>
               <div className="container">
-                <h1 className={styles.title} ref={titleRef}>{project.title.rendered}</h1>
+                <h1 className={styles.title} ref={titleRef}>
+                  {project.title.rendered.replace(/&#8211;/g, "-")}
+                </h1>
                 <div className={styles.topImgOwn} ref={imgRef}>
                   <Image
                     src={project.acf.logo_company}
@@ -526,7 +525,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                     width={261}
                     height={57}
                     loading="lazy"
-                    
                   />
                 </div>
                 <div className={styles.hourWrap} ref={hourRef}>
@@ -548,7 +546,9 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
           {project.acf.title_mn && (
             <div className={styles.mainTask}>
               <div className="container">
-                <h3 className={styles.taskTitle} ref={taskTitleRef}>{project.acf.title_tas}</h3>
+                <h3 className={styles.taskTitle} ref={taskTitleRef}>
+                  {project.acf.title_tas}
+                </h3>
                 <p className={styles.taskDescr} ref={taskDescrRef}>
                   {project.acf.description_tas}
                 </p>
@@ -558,7 +558,6 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       src={project.acf.image_ts}
                       alt={project.acf.title_tas}
                       width={261}
-                      priority
                       height={57}
                       layout="responsive"
                       loading="lazy"
@@ -572,7 +571,9 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
           {project.acf.title_dv && (
             <div className={styles.dev}>
               <div className="container">
-                <h3 className={styles.devTitle} ref={devTitleRef}>{project.acf.title_dv}</h3>
+                <h3 className={styles.devTitle} ref={devTitleRef}>
+                  {project.acf.title_dv}
+                </h3>
                 <div className={styles.devWrap}>
                   <div className={styles.devImg} ref={devImgRef}>
                     <Image
@@ -601,7 +602,9 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
           {project.acf.title_res && (
             <div className={styles.resp}>
               <div className="container">
-                <h3 className={styles.respTitle} ref={respTitleRef}>{project.acf?.title_res}</h3>
+                <h3 className={styles.respTitle} ref={respTitleRef}>
+                  {project.acf?.title_res}
+                </h3>
                 <p className={styles.respDescr} ref={respDescrRef}>
                   {project.acf?.description_res}
                 </p>
@@ -628,7 +631,9 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
           {project.acf.title_ts && (
             <div className={styles.testing}>
               <div className="container">
-                <h3 className={styles.testingTitle} ref={testingTitleRef}>{project.acf?.title_ts}</h3>
+                <h3 className={styles.testingTitle} ref={testingTitleRef}>
+                  {project.acf?.title_ts}
+                </h3>
                 <p className={styles.testingDescr} ref={testingDescrRef}>
                   {project.acf?.description_ts}
                 </p>
@@ -740,11 +745,13 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                     })}
                   </div>
                   <div className={styles.topTextBlock} ref={projBlocksRef}>
-                    <div className={styles.topTestWrapLast} >
+                    <div className={styles.topTestWrapLast}>
                       <h4 className={styles.topTitle} ref={manageTitleRef}>
                         {project.acf?.title_mn}
                       </h4>
-                      <p className={styles.topDescr} ref={manageDescrRef}>{pContent}</p>
+                      <p className={styles.topDescr} ref={manageDescrRef}>
+                        {pContent}
+                      </p>
                       <ul className={styles.topList}>
                         {liContents &&
                           liContents.map((item, index) => {
@@ -757,11 +764,16 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       </ul>
                     </div>
                     <div className={styles.topBtnsWrap}>
-                      <div className={styles.bottomImgBtn}>
-                        <span>
-                          {project.acf?.text_button_mn.replace(/<\/?br>/g, "")}
-                        </span>
-                      </div>
+                      <Link href={"/contact-us"}>
+                        <div className={styles.bottomImgBtn}>
+                          <span>
+                            {project.acf?.text_button_mn.replace(
+                              /<\/?br>/g,
+                              ""
+                            )}
+                          </span>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 </div>

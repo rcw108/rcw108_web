@@ -9,6 +9,7 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
     { id: "283" },
     { id: "76" },
     { id: "70" },
+    { id: "462" },
   ];
   return staticParams;
 }

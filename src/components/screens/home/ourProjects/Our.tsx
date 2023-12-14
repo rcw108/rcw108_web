@@ -4,6 +4,7 @@ import ProjectBlock from "@/components/ui/projectBlock/ProjectBlock";
 import ServicesBlock from "@/components/ui/servicesBlock/ServicesBlock";
 import { FC, useRef, useEffect } from "react";
 import SliderComponent from "./SliderComponent";
+import Link from "next/link";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -69,8 +70,8 @@ const OurProjects: FC<OurProjectsProps> = ({
       gsap.from(descriptionRef.current, {
         opacity: 0,
         x: -15,
-        y: 30, 
-        transformOrigin: "bottom left", 
+        y: 30,
+        transformOrigin: "bottom left",
         duration: 1,
         scrollTrigger: {
           trigger: projectRef.current,
@@ -80,8 +81,8 @@ const OurProjects: FC<OurProjectsProps> = ({
               opacity: 1,
               duration: 1,
               x: 0,
-              y: 0, 
-              scale: 1, 
+              y: 0,
+              scale: 1,
             });
           },
         },
@@ -145,9 +146,11 @@ const OurProjects: FC<OurProjectsProps> = ({
       </div>
       <SliderComponent showedProjects={showedProjects} />
       <div className={styles.btns}>
-        <div className={styles.button}>
-          <span>{btnText}</span>
-        </div>
+        <Link href={"/projects"}>
+          <div className={styles.button}>
+            <span>{btnText}</span>
+          </div>
+        </Link>
       </div>
     </section>
   );
