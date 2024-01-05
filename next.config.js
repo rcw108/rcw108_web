@@ -6,8 +6,6 @@ const nextConfig = {
   images: {
     domains: ["rcw108.com"],
 
-    loader: "custom",
-    loaderFile: "./src/my-loader.ts",
   },
 };
 
