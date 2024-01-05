@@ -3,21 +3,21 @@ import ProjectS from "@/components/screens/projects/singleProject/ProjectS";
 import { ProjectData } from "@/interfaces/project.interface";
 import { GetStaticPaths, Metadata, ResolvingMetadata } from "next";
 
-export async function generateStaticParams(): Promise<{ id: string }[]> {
-  const staticParams = [
-    { id: "338" },
-    { id: "283" },
-    { id: "76" },
-    { id: "70" },
-    { id: "462" },
-  ];
-  return staticParams;
-}
+// export async function generateStaticParams(): Promise<{ id: string }[]> {
+//   const staticParams = [
+//     { id: "338" },
+//     { id: "283" },
+//     { id: "76" },
+//     { id: "70" },
+//     { id: "462" },
+//   ];
+//   return staticParams;
+// }
 
 async function fetchData({ id }: { id: string }) {
   const res = await fetch(
     `https://rcw108.com/dev/wp-json/wp/v2/projects/${id}?acf_format=standard`,
-    { next: { revalidate: 3600 }, cache: "force-cache", headers: {
+    { next: { revalidate: 360 }, headers: {
       'Cache-Control': 'public, max-age=31536000',
     }, }
   );
@@ -32,7 +32,7 @@ async function fetchData({ id }: { id: string }) {
 async function fetchAllPostData() {
   const res = await fetch(
     `https://rcw108.com/dev/wp-json/wp/v2/projects?acf_format=standard`,
-    { next: { revalidate: 3600 }, cache: "force-cache", headers: {
+    { next: { revalidate: 360 }, headers: {
       'Cache-Control': 'public, max-age=31536000',
     }, }
   );
@@ -51,7 +51,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const product = await fetch(
     `https://rcw108.com/dev/wp-json/wp/v2/projects/${params.id}?acf_format=standard`,
-    { cache: "force-cache" }
+    { next: { revalidate: 360 } }
   ).then((res) => res.json());
   const meta = await product;
 

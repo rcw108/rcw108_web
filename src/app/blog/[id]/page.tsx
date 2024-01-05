@@ -2,17 +2,17 @@ import SingleBlog from "@/components/screens/blog/singleBlog/SingleBlog";
 import { Post } from "@/interfaces/blog.interface";
 import { GetStaticPaths, Metadata, ResolvingMetadata } from "next";
 
-export async function generateStaticParams(): Promise<{ id: string }[]> {
-  const staticParams = [
-    { id: "453" },
-  ];
-  return staticParams;
-}
+// export async function generateStaticParams(): Promise<{ id: string }[]> {
+//   const staticParams = [
+//     { id: "453" },
+//   ];
+//   return staticParams;
+// }
 
 async function fetchData({ id }: { id: string }) {
   const res = await fetch(
     `https://rcw108.com/dev/wp-json/wp/v2/posts/${id}`,
-    { next: { revalidate: 3600 }, cache: "force-cache", headers: {
+    { next: { revalidate: 360 }, headers: {
       'Cache-Control': 'public, max-age=31536000',
     }, }
   );
@@ -27,7 +27,7 @@ async function fetchData({ id }: { id: string }) {
 async function fetchAllPostData() {
   const res = await fetch(
     `https://rcw108.com/dev/wp-json/wp/v2/posts/`,
-    { next: { revalidate: 3600 }, cache: "force-cache", headers: {
+    { next: { revalidate: 360 }, headers: {
       'Cache-Control': 'public, max-age=31536000',
     }, }
   );
@@ -45,8 +45,7 @@ export async function generateMetadata({
   params: { id: string };
 }): Promise<Metadata> {
   const product = await fetch(
-    `https://rcw108.com/dev/wp-json/wp/v2/posts/${params.id}`,
-    { cache: "force-cache" }
+    `https://rcw108.com/dev/wp-json/wp/v2/posts/${params.id}`, {next: { revalidate: 360 }},
   ).then((res) => res.json());
   const meta = await product;
 

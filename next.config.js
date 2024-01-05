@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
   cacheControl: {
     maxAge: 60 * 60 * 24 * 30,
   },

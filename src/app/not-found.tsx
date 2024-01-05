@@ -2,7 +2,7 @@ import ErrorPage from "@/components/screens/404/ErrorPage";
 
 async function fetchData() {
   const res = await fetch("https://dev.rcw108.com/wp-json/wp/v2/options", {
-    cache: "force-cache",
+    next: { revalidate: 3600 },
   });
 
   if (!res.ok) {

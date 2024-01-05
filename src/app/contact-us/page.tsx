@@ -4,7 +4,7 @@ import { Metadata } from "next";
 async function fetchData() {
   const res = await fetch(
     "https://rcw108.com/dev/wp-json/wp/v2/pages/240?acf_format=standard",
-    { next: { revalidate: 3600 }, cache: "force-cache", headers: {
+    { next: { revalidate: 360 }, headers: {
       'Cache-Control': 'public, max-age=31536000',
     },}
   );
