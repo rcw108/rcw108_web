@@ -1,4 +1,5 @@
 import ErrorPage from "@/components/screens/404/ErrorPage";
+import Script from "next/script";
 
 async function fetchData() {
   const res = await fetch("https://rcw108.com/dev/wp-json/wp/v2/options", {
@@ -17,6 +18,16 @@ export default async function notFound() {
 
   return (
     <>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-GVC6XM8JN0" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-GVC6XM8JN0');
+        `}
+      </Script>
       {title_ch && (
         <ErrorPage
           title_ch={title_ch}

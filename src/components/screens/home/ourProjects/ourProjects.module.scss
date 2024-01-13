@@ -6,6 +6,7 @@
   overflow: hidden;
   a {
     text-decoration: none;
+    font-family: var(--font-space) !important;
   }
   .title {
     text-align: center;
@@ -70,8 +71,10 @@
     transition: all 0.3s ease-in-out;
     overflow: hidden;
     position: relative;
+    font-family: var(--font-space);
     span {
       transition: color 0.3s ease;
+      font-family: var(--font-space);
       z-index: 5;
     }
     &::before {

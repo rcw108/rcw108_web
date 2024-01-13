@@ -1,13 +1,16 @@
 import Home from "@/components/screens/home/Home";
 import { Metadata } from "next";
-
+import Script from "next/script";
 
 async function fetchData() {
   const res = await fetch(
     "https://rcw108.com/dev/wp-json/wp/v2/pages/2?acf_format=standard",
-    { next: { revalidate: 360, }, headers: {
-      'Cache-Control': 'public, max-age=31536000',
-    }, }
+    {
+      next: { revalidate: 360 },
+      headers: {
+        "Cache-Control": "public, max-age=31536000",
+      },
+    }
   );
 
   if (!res.ok) {
@@ -36,7 +39,8 @@ export async function generateMetadata({
       title: meta?.yoast_head_json?.title || "RCW108",
       description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
       openGraph: {
-        images: "https://rcw108.com/dev/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+        images:
+          "https://rcw108.com/dev/wp-content/uploads/2022/04/cropped-Group-46-1.png",
         // title:
         //   meta?.yoast_head_json?.og_title || meta.title.rendered || "RCW108",
         // description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
@@ -91,12 +95,26 @@ export async function generateMetadata({
     return {
       title: "RCW108",
       description: "RCW108",
-    }
+    };
   }
 }
 
 export default async function HomePage({ projects }: any) {
   const { acf } = await fetchData();
 
-  return <>{acf && <Home acf={acf} projects={projects} />}</>;
+  return (
+    <>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-GVC6XM8JN0" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-GVC6XM8JN0');
+        `}
+      </Script>
+      {acf && <Home acf={acf} projects={projects} />}
+    </>
+  );
 }

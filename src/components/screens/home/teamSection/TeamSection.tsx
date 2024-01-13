@@ -8,6 +8,7 @@ import styles from "./teamSection.module.scss";
 import { TeamMember } from "@/interfaces/home.interface";
 import Slider from "react-slick";
 import TeamBlock from "./TeamBlock";
+import Link from "next/link";
 
 interface ITeamSection {
   team: TeamMember[];
@@ -117,7 +118,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
       </div>
       <div className={styles.btns}>
         <div className={styles.btn}>
-          <div className={styles.btnText}>{teamBtn}</div>
+          <Link href="/contact-us"><div className={styles.btnText}>{teamBtn}</div></Link>
         </div>
       </div>
     </section>

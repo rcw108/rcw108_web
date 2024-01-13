@@ -18,6 +18,9 @@ interface IProj {
 }
 
 const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
+
+  // console.log(project);
+
   const titleRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
   const hourRef = useRef<HTMLDivElement>(null);
@@ -487,10 +490,10 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
   }, []);
 
   const h4ContentRegex = /<h4>(.*?)<\/h4>/;
-  const match = project.acf.description_dv.match(h4ContentRegex);
+  const match = project?.acf?.description_dv?.match(h4ContentRegex);
 
   const h4Content = match ? match[1] : "";
-  const remainingContent = project.acf.description_dv.replace(
+  const remainingContent = project?.acf?.description_dv?.replace(
     h4ContentRegex,
     ""
   );
@@ -503,33 +506,33 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
   const remainingPContent = project.acf?.text_mn.replace(pContentRegex, "");
 
   const liContentRegex = /<li>(.*?)<\/li>/gs;
-  const LiMatches = remainingPContent.match(liContentRegex);
+  const LiMatches = remainingPContent?.match(liContentRegex);
 
   const liContents =
     LiMatches && LiMatches.map((match) => match.replace(/<\/?li>/g, ""));
 
   return (
     <>
-      {project && nextProj && (
+      {project && (
         <section className={styles.single}>
-          {project && (
+          {project.acf && (
             <div className={styles.headSection}>
               <div className="container">
                 <h1 className={styles.title} ref={titleRef}>
-                  {project.title.rendered.replace(/&#8211;/g, "-")}
+                  {project?.title?.rendered?.replace(/&#8211;/g, "-")}
                 </h1>
                 <div className={styles.topImgOwn} ref={imgRef}>
                   <Image
-                    src={project.acf.logo_company}
-                    alt={project.title.rendered}
+                    src={project?.acf?.logo_company}
+                    alt={project?.title?.rendered}
                     width={261}
                     height={57}
                     loading="lazy"
                   />
                 </div>
                 <div className={styles.hourWrap} ref={hourRef}>
-                  {project.acf.informations &&
-                    project.acf.informations.map((item, index) => {
+                  {project?.acf?.informations &&
+                    project?.acf?.informations.map((item, index) => {
                       return (
                         <div key={index} className={styles.hourBlock}>
                           <h3 className={styles.hourTitle}>
@@ -543,7 +546,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               </div>
             </div>
           )}
-          {project.acf.title_mn && (
+          {project.acf.title_mn !== "" || project.acf.text_mn !== undefined && (
             <div className={styles.mainTask}>
               <div className="container">
                 <h3 className={styles.taskTitle} ref={taskTitleRef}>
@@ -568,7 +571,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
             </div>
           )}
 
-          {project.acf.title_dv && (
+          {project?.acf?.title_dv && (
             <div className={styles.dev}>
               <div className="container">
                 <h3 className={styles.devTitle} ref={devTitleRef}>
@@ -599,7 +602,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
             </div>
           )}
 
-          {project.acf.title_res && (
+          {project?.acf?.title_res && (
             <div className={styles.resp}>
               <div className="container">
                 <h3 className={styles.respTitle} ref={respTitleRef}>
@@ -628,7 +631,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
             </div>
           )}
 
-          {project.acf.title_ts && (
+          {project?.acf?.title_ts && (
             <div className={styles.testing}>
               <div className="container">
                 <h3 className={styles.testingTitle} ref={testingTitleRef}>
@@ -688,7 +691,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
             </div>
           )}
 
-          {project.acf.title_sup && (
+          {project?.acf?.title_sup && (
             <div className={styles.support}>
               <div className="container">
                 <h3 className={styles.supportTitle} ref={supTitleRef}>
@@ -725,7 +728,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
             </div>
           )}
 
-          {project.acf.title_mn && (
+          {project?.acf?.title_mn && (
             <div className={styles.manage}>
               <div className="container">
                 <div className={styles.manageTopWrap}>
@@ -786,9 +789,9 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
               style={{
                 background: `url(${nextProj.acf?.image_ts}) top center/cover no-repeat`,
               }}
-            >
+            > 
               <div className={styles.nextWrapper}>
-                <Link href={`/projects/${nextProj.id}`}>
+                <Link href={`/projects/${nextProj.slug}`}>
                   <div className={styles.nextBtn}>
                     <span>Next Project</span>
                   </div>

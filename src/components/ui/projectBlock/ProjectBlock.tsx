@@ -20,6 +20,7 @@ interface IProjectBlock {
   description: string;
   web: string;
   index: number;
+  slug: string
 }
 
 const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
@@ -29,6 +30,7 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
   description,
   web,
   index,
+  slug,
 }) => {
   const searchParams = useSearchParams();
 
@@ -79,7 +81,7 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
           </div>
           <div className={styles.btns}>
             <div className={styles.detail}>
-              <Link href={`/projects/${id}`}>
+              <Link href={`/projects/${slug}`}>
                 <div className={styles.detailText}>View Detail</div>
               </Link>
             </div>

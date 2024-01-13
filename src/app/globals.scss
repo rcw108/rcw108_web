@@ -280,6 +280,13 @@ nav svg {
   }
 }
 
+#team {
+  .slick-dots {
+    margin-left: 0 !important;
+    bottom: 0px;
+  }
+}
+
 @media (max-width: 992px) {
   #testimonials {
     .slick-dots {

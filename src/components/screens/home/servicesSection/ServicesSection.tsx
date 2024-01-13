@@ -172,7 +172,7 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
         </div>
         <div className={styles.btns}>
           <div className={styles.btn}>
-            <Link href={btnLink}><span>{btnText}</span></Link>
+            <Link href="/blog"><span>{btnText}</span></Link>
           </div>
         </div>
       </section>

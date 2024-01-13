@@ -53,7 +53,6 @@ const Menu: FC<PropsWithChildren<any>> = ({ menu }) => {
                     ? item.url
                     : `/${item.url.replace("http://", "")}`;
 
-                    console.log(pathName, pathname)
                   return (
                     <li key={index} className={`${styles.menuItem}`}>
                       <Link

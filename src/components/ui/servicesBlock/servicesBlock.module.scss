@@ -14,11 +14,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: #c8cad6 4px 4px 4px, #fdfdff -4px -4px 4px;
+    // box-shadow: #c8cad6 4px 4px 4px, #fdfdff -4px -4px 4px;
     margin-right: 20px;
     img {
-      max-width: 45px;
-      max-height: 45px;
+      max-width: 35px;
+      max-height: 35px;
     }
   }
   .title {
@@ -28,6 +28,7 @@
     font-weight: 500;
     line-height: 28px;
     text-transform: uppercase;
+    font-family: var(--font-space);
   }
 }
 

@@ -32,6 +32,7 @@ const Project: FC<PropsWithChildren<ProjectData[] | any>> = (projects) => {
         title={item.title.rendered}
         description={item.excerpt.rendered}
         web={item.acf.website}
+        slug={item.slug}
       />
     ));
   };

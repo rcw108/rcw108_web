@@ -46,7 +46,7 @@
         color: $mainTextColor;
         span {
           font-size: 25px;
-          line-height: 35px;
+          line-height: 50px;
           margin-left: 15px;
         }
       }
@@ -62,7 +62,7 @@
   //   MainTasks
   .mainTask {
     padding: 60px 0;
-    background-color: $singlePostSecondColor;
+    // background-color: $singlePostSecondColor;
 
     .taskTitle {
       font-size: 40px;
@@ -88,7 +88,7 @@
       overflow: hidden;
       position: relative;
       .viewBox {
-        height: 900px;
+        height: 680px;
         overflow: auto;
       }
       img {

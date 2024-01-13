@@ -1,6 +1,7 @@
 import SingleBlog from "@/components/screens/blog/singleBlog/SingleBlog";
 import { Post } from "@/interfaces/blog.interface";
 import { GetStaticPaths, Metadata, ResolvingMetadata } from "next";
+import Script from 'next/script'
 
 // export async function generateStaticParams(): Promise<{ id: string }[]> {
 //   const staticParams = [
@@ -10,12 +11,12 @@ import { GetStaticPaths, Metadata, ResolvingMetadata } from "next";
 // }
 
 async function fetchData({ id }: { id: string }) {
-  const res = await fetch(
-    `https://rcw108.com/dev/wp-json/wp/v2/posts/${id}`,
-    { next: { revalidate: 360 }, headers: {
-      'Cache-Control': 'public, max-age=31536000',
-    }, }
-  );
+  const res = await fetch(`https://rcw108.com/dev/wp-json/wp/v2/posts/${id}`, {
+    next: { revalidate: 360 },
+    headers: {
+      "Cache-Control": "public, max-age=31536000",
+    },
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -25,12 +26,12 @@ async function fetchData({ id }: { id: string }) {
 }
 
 async function fetchAllPostData() {
-  const res = await fetch(
-    `https://rcw108.com/dev/wp-json/wp/v2/posts/`,
-    { next: { revalidate: 360 }, headers: {
-      'Cache-Control': 'public, max-age=31536000',
-    }, }
-  );
+  const res = await fetch(`https://rcw108.com/dev/wp-json/wp/v2/posts/`, {
+    next: { revalidate: 360 },
+    headers: {
+      "Cache-Control": "public, max-age=31536000",
+    },
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -45,7 +46,8 @@ export async function generateMetadata({
   params: { id: string };
 }): Promise<Metadata> {
   const product = await fetch(
-    `https://rcw108.com/dev/wp-json/wp/v2/posts/${params.id}`, {next: { revalidate: 360 }},
+    `https://rcw108.com/dev/wp-json/wp/v2/posts/${params.id}`,
+    { next: { revalidate: 360 } }
   ).then((res) => res.json());
   const meta = await product;
 
@@ -117,21 +119,28 @@ export default async function SingleProject({
 }: {
   params: { id: string };
 }) {
-
-  const {id} = params;
-  const data = await fetchData({id});
+  const { id } = params;
+  const data = await fetchData({ id });
 
   const nextPost = await fetchAllPostData();
 
-  const nextShowedPost = nextPost.filter(
-    (item: Post) => item.id !== data.id
-  );
+  const nextShowedPost = nextPost.filter((item: Post) => item.id !== data.id);
 
   const randomIndex: number = Math.floor(Math.random() * nextShowedPost.length);
   const randomPost: Post = nextShowedPost[randomIndex];
 
   return (
     <>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-GVC6XM8JN0" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-GVC6XM8JN0');
+        `}
+      </Script>
       {data && nextPost && <SingleBlog post={data} nextPost={randomPost} />}
     </>
   );

@@ -7,6 +7,7 @@ import { Content } from "@/interfaces/home.interface";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Link from "next/link";
 
 interface IWorkSection {
   content: Content[];
@@ -134,7 +135,7 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({
       </div>
       <div className={styles.btns}>
         <div className={styles.button}>
-          <span>{btnText.replace(/<br\s*\/?>/g, "")}{" "}</span>
+          <Link href="/contact-us"><span>{btnText.replace(/<br\s*\/?>/g, "")}{" "}</span></Link>
         </div>
       </div>
     </section>

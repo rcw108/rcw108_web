@@ -70,6 +70,7 @@
         cursor: pointer;
         overflow: hidden;
         position: relative;
+        font-family: var(--font-space);
         span {
           transition: color 0.3s ease;
           z-index: 5;
