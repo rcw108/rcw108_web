@@ -140,8 +140,7 @@ const OurProjects: FC<OurProjectsProps> = ({
               title={item.title.rendered}
               description={item.excerpt.rendered}
               web={item.acf.website}
-              index={index}
-            />
+              index={index} slug={item.slug}            />
           ))}
       </div>
       <SliderComponent showedProjects={showedProjects} />
