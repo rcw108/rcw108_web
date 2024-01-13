@@ -32,6 +32,7 @@ const SliderComponent: FC<PropsWithChildren<ProjectData[] | any>> = ({
         {showedProjects &&
           showedProjects.map(
             (item: {
+              slug: string;
               id: number;
               acf: { image_ts: string; website: string };
               title: { rendered: string };
@@ -45,8 +46,7 @@ const SliderComponent: FC<PropsWithChildren<ProjectData[] | any>> = ({
                   image={item.acf.image_ts}
                   title={item.title.rendered}
                   description={item.excerpt.rendered}
-                  web={item.acf.website}
-                />
+                  web={item.acf.website} slug={item.slug}                />
               );
             }
           )}
